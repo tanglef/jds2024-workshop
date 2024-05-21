@@ -1,0 +1,62 @@
+---
+title: "Workshop on Reproducible Research"
+subtitle: "A hands-on introduction to quarto with a Computo submission"
+---
+
+# Introduction
+
+Quarto is a new document format that is designed to make it easy to create, share, and publish reproducible research. In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to submit our document to Computo, an online journal for publishing reproducible research.
+
+## Learning objectives
+
+- Understand the benefits of reproducible research
+- Learn how to create a quarto document
+- Learn how to include code, data, and narrative text in a quarto document
+- Learn how to submit a quarto document to Computo
+- How to navigate the Computo submission process
+
+# Getting started
+
+To get started you will need to clone the mock repository for this workshop. You can do this by running the following command in your terminal:
+
+## Creating a repo from a template
+
+### Python version
+
+### R version
+
+### Julia version ?
+
+# The main pipeline, step by step
+
+- Template installation
+- computing environment : renv, conda, etc.
+- Authoring in the qmd
+- rendering locally
+- pushing to github
+
+## Reproducibility considerations 
+
+### General and theoretical considerations
+
+Scientific and editorial reproducibility
+
+### Practical considerations 
+
+#### Cache/freeze management in quarto
+
+#### .Rdata
+
+#### python : pickle/feather
+
+#### precomputed notebooks
+
+## Submission to Computo
+
+### Computo submission process
+
+### Computo review process
+
+### Computo publication process
+
+# Conclusion

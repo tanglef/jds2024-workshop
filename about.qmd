@@ -1,0 +1,5 @@
+---
+title: "About"
+---
+
+This is the site on "Workshop on reproducible research", at the JdS 2024, Bordeaux.
