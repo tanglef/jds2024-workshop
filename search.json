@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Workshop on Reproducible Research",
+    "section": "",
+    "text": "Quarto is a new document format that is designed to make it easy to create, share, and publish reproducible research. In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to submit our document to Computo, an online journal for publishing reproducible research.\n\n\n\nUnderstand the benefits of reproducible research\nLearn how to create a quarto document\nLearn how to include code, data, and narrative text in a quarto document\nLearn how to submit a quarto document to Computo\nHow to navigate the Computo submission process"
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Workshop on Reproducible Research",
+    "section": "",
+    "text": "Understand the benefits of reproducible research\nLearn how to create a quarto document\nLearn how to include code, data, and narrative text in a quarto document\nLearn how to submit a quarto document to Computo\nHow to navigate the Computo submission process"
+  },
+  {
+    "objectID": "index.html#creating-a-repo-from-a-template",
+    "href": "index.html#creating-a-repo-from-a-template",
+    "title": "Workshop on Reproducible Research",
+    "section": "Creating a repo from a template",
+    "text": "Creating a repo from a template\n\nPython version\n\n\nR version\n\n\nJulia version ?"
+  },
+  {
+    "objectID": "index.html#reproducibility-considerations",
+    "href": "index.html#reproducibility-considerations",
+    "title": "Workshop on Reproducible Research",
+    "section": "Reproducibility considerations",
+    "text": "Reproducibility considerations\n\nGeneral and theoretical considerations\nScientific and editorial reproducibility\n\n\nPractical considerations\n\nCache/freeze management in quarto\n\n\n.Rdata\n\n\npython : pickle/feather\n\n\nprecomputed notebooks"
+  },
+  {
+    "objectID": "index.html#submission-to-computo",
+    "href": "index.html#submission-to-computo",
+    "title": "Workshop on Reproducible Research",
+    "section": "Submission to Computo",
+    "text": "Submission to Computo\n\nComputo submission process\n\n\nComputo review process\n\n\nComputo publication process"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is the site on “Workshop on reproducible research”, at the JdS 2024, Bordeaux."
+  }
+]
