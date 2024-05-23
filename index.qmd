@@ -2,10 +2,594 @@
 title: "Workshop on Reproducible Research"
 subtitle: "A hands-on introduction to quarto with a Computo submission"
 ---
+# Short introduction to Computo
 
-# Introduction
+## Team
 
-Quarto is a new document format that is designed to make it easy to create, share, and publish reproducible research. In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to submit our document to Computo, an online journal for publishing reproducible research.
+:::: {.columns}
+::: {.column width="60%"}
+Editorial board
+:::
+::: {.column width="10%"}
+
+:::
+::: {.column width="20%"}
+IT support
+:::
+::::
+
+:::: {.columns}
+::: {.column width="20%"}
+
+#### Julien Chiquet <small>(chief editor)</small>
+
+<small>Stat. learning, DR INRAE<br/>
+Paris-Saclay University</small>
+
+![](./people/julien.jpg){width='120'}
+
+:::
+::: {.column width="20%"}
+
+#### Pierre Neuvial
+
+<small>Statistique, DR CNRS<br/>
+IMT Toulouse<br/></small>
+
+![](./people/pierre.jpg){width='120'}
+
+:::
+::: {.column width="20%"}
+
+#### Mathurin Massias
+
+<small>Optim./Machine-Learning<br/>
+CR INRIA Lyon</small>
+
+![](./people/mathurin.jpg){width='120'} 
+
+:::
+::: {.column width="10%"}
+
+:::
+::: {.column width="20%"}
+
+#### Fra.-Dav. Collin
+
+<small>CS/Stats/ML, IR CNRS<br/>
+IMAG, Montpellier University</small>
+
+![](./people/fradav.jpg){width='120'}
+
+:::
+::::
+
+:::: {.columns}
+::: {.column width="20%"}
+
+#### Nelle Varoquaux
+
+<small>Machine learning, CR CNRS<br/>
+Grenoble Alpes University</small>
+
+![](./people/nelle.jpg){width='120'}
+
+:::
+::: {.column width="20%"}
+
+#### Marie-Pierre Étienne
+
+<small>Statistics, MCF<br/>
+Institut Agro Rennes-Angers</small>
+
+![](./people/marie-pierre.jpg){width='120'} 
+
+:::
+::: {.column width="20%"}
+
+#### Chloé Azencott
+
+<small>Machine Learning <br/>
+CR MinesParisTech</small>
+
+![](./people/chloe.jpg){width='120'} 
+
+:::
+::: {.column width="10%"}
+
+:::
+::: {.column width="20%"}
+
+#### Ghislain Durif
+
+<small>Stats/ML/dev, IR CNRS<br/>
+LBMC, ENS LYON</small>
+
+![](./people/ghislain.jpg){width='120'} 
+
+:::
+::::
+
+## Origin (~ 2020s)
+
+[French statistical society](https://www.sfds.asso.fr/) appoints a "publication" commitee (lead by Julien then Pierre) to develop a new journal
+
+::: {.callout-note}
+### Assessment
+
+😔 Multiplication of "traditional" journals...
+
+😔 No valorization of "negative" results
+
+😥 No or not enough valorization of source codes and case studies
+
+😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) [@hanson2023]
+
+😱 Issue with *scientific* reproducibility (analyses, experiments) [@ioannidis2005; @steen2011; @allison2016; @bastian2016; @whitfield2021; @hernandez2023]
+
+::: 
+
+::: {.callout-tip}
+### Point of view
+- Need for renewal regarding scientific research implementation
+- Need for higher standard regarding result publications
+::: 
+
+⇝ Emergence of "Computo" idea
+
+## Philosophy
+
+::: {.callout-note}
+
+### Scientific perimeter
+Promote contribution in **statistics** and **machine learning** that provide insight into which models or methods are more appropriate to address a specific scientific question
+:::
+
+::: {.callout-tip}
+### Open access
+
+:::: {.columns}
+::: {.column width="90%"}
+
+- ["Diamond" open access](https://en.wikipedia.org/wiki/Open_access#Diamond/platinum_OA) (free to publish and free to read, possible to reuse)
+- 🅭 🅯 Content published under [CC-BY](https://creativecommons.org/licenses/by/4.0/) license (attribution, share, adapt)
+- Reviews and discussions available after acceptance for publication (anonymous reviews)
+
+⇝ In accordance with [Budapest Open Access Initiative (BOAI)](https://www.budapestopenaccessinitiative.org/) and [Plan S](https://www.coalition-s.org/addendum-to-the-coalition-s-guidance-on-the-implementation-of-plan-s/principles-and-implementation/)
+
+:::
+::: {.column width="10%"}
+![](img/open_access_logo.png){width=70}
+:::
+::::
+
+:::
+
+
+::: {.callout-important}
+### Reproducible
+- Numerical (statistical) reproducibility is a necessary condition
+- Source code and data should be available, at least partly executed and fully executable
+:::
+
+## Note on reproducible research [@desquilbet2019; @hejblum2020; @the_turing_way2022]
+
+#### Why reproducing scientific results?
+
+- To strengthen their credibility
+- To check for errors (everyone makes error at some point!!!)
+- To build new research upon them (science is incremental)
+
+#### Issues?
+
+- Reproduce numerical scientific results is often difficult (technology/environment evolution, source code/environment configuration/software partially available or not available)
+- Waste of time and resources to reproduce existing non-reproducible results
+
+#### Reproducible research?
+
+- For others but also **for your future self**
+- Improve result credibility
+- Facilitate future research works
+
+## Setup
+
+Official launch at the end of 2021
+
+<center>[![](img/computo_website.png){height=280px}](https://computo.sfds.asso.fr)
+[![](img/computo_github-group.png){height=280px}](https://github.com/computorg/)</center>
+
+### "Economical" model
+
+- A few tenacious people...
+- Free/Open-source community tools (Pandoc, Quarto, Git forge)
+- Institutional support (INRAE, INRIA, CNRS, SFdS)
+
+
+## Functioning
+
+:::: {.columns}
+
+::: {.column width="65%"}
+
+### Writing system
+
+Notebook and literate programming</br><small>text (markdown) + math ($\LaTeX$) + code (Python/R/Julia), references (bib$\TeX$)</small>
+
+### Publication system
+
+Environment management, Compilation, Multi-format publication (pdf, html)<br><small>Continuous integration/Continuous deployment (CI/CD)</small>
+
+### Reviewing system
+
+- Anonymous exchange published after acceptance
+- Reviewer pool (you can join)
+- [_Ongoing switch from Scholastica to Open review_]
+
+:::
+::: {.column width="35%"}
+
+#### Solutions/Prototype
+
+Reproducible article and computations
+
+[![](img/quarto.png){height=40px}](https://quarto.org)
+
+Automatic editorial reproducibility
+
+[![](img/github_actions.png){height=80px}](https://github.com/features/actions)
+
+Scientific validation
+
+[![](img/openreview.png){height=80px}](https://openreview.net/)
+
+:::
+::::
+
+
+## Note on literate programming
+
+<br>
+
+- Literate programming [@knuth1984]: notebook including text and code
+- Markup formatting language: e.g. [`markdown`](https://fr.wikipedia.org/wiki/Markdown)
+- Separate content from rendering (≠ ["what you see is what you get"](https://en.wikipedia.org/wiki/WYSIWYG) editors)
+- Rendering includes text, code and results (from code computations)
+
+<br>
+
+```markdown
+---
+title: "My article"
+---
+
+We compute 1+1:
+
+\`\`\`{r}
+1+1
+\`\`\`
+```
+
+## Note on quarto
+
+<br>
+
+:::{.r-stack}
+[![](img/quarto.png){height=80px}](https://quarto.org) <https://quarto.org>
+:::
+
+<br>
+
+- Generalization of [`Rmarkdown`](https://pkgs.rstudio.com/rmarkdown/)
+- Relying on top community tools like universal document converter [`Pandoc`](https://pandoc.org/)
+- Developed and supported by RStudio/Posit
+- Native support of complex documents (website, articles, books) and multiple languages for computations (R, Python, Julia)
+- Management of references, citations, figures, tables, metadata, etc.
+
+
+## Note on [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)
+
+- Implementation in git forges (e.g. [github actions](https://github.com/features/actions) or [gitlab CI/CD](https://about.gitlab.com/topics/ci-cd/))
+- Triggered by commits
+- Automatic tests
+- Automatic deployment: package/software publication, website
+
+[![](img/continuous_integration.jpg){width=600px fig-align="center"}](https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg)
+
+:::{.r-stack}
+<small>Credit: Pratik89Roy [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en) from [Wikimedia](https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg)</small>
+:::
+
+
+## Tools for authors
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+#### Document model
+
+[`quarto` Computo extension](https://computorg.github.io/computo-quarto-extension/)
+[![](img/computo_repo_quarto_extension.png){height=300px}](https://github.com/computorg/computo-quarto-extension)
+
+:::
+
+::: {.column width="50%"}
+
+#### Document template
+
+[Git `template` repository](https://computo.sfds.asso.fr/repos/)
+
+with template notebook document + doc + pre-configured compilation and publication setup
+
+[![](img/computo_template_repositories.png)](https://computo.sfds.asso.fr/repos/)
+
+:::
+
+::::
+
+### Locally
+
+:::: {.columns}
+::: {.column width="55%"}
+
+- Text editor/IDE (VS Code, Rstudio, NeoVim, etc.) 
+- Quarto (compilation)
+
+:::
+::: {.column width="45%"}
+
+- Julia / R / Python code + computations
+- git versioning system
+
+:::
+::::
+
+## Author point of view (1/3)
+
+<br>
+
+### Step 0: setup a git repository for your article
+
+:::: {.columns}
+::: {.column width="58%"}
+
+Startup from a template repository ([R](https://github.com/computorg/template-computo-R), [Python](https://github.com/computorg/template-computo-python), [Julia](https://github.com/computorg/template-computo-julia))
+
+::: {.callout-tip}
+You can host your git repository on [**github**](https://github.com) and soon an any **gitlab** forge^[with CI/CD support].
+:::
+
+:::
+::: {.column width="42%"}
+
+[![](img/computo_use_template.png)](https://github.com/computorg/template-computo-R)
+
+:::
+::::
+
+<br>
+
+### Step 1: write your article
+
+Let's go, locally (same spirit as Jupyter/Rmarkdown notebooks)
+
+
+
+## Author point of view (2/3)
+
+### Step 2: configure the environment (dependencies management)
+
+::: {.panel-tabset}
+
+#### Example in Python
+
+:::: {.columns}
+::: {.column width="75%"}
+
+`venv`: use a virtual environment and generate the `requirements.txt` file
+
+:::
+::: {.column width="25%"}
+
+```yaml
+# requirements.txt
+jupyter
+matplotlib
+numpy
+```
+
+:::
+::::
+
+
+#### Example in R
+
+:::: {.columns}
+::: {.column width="58%"}
+
+`renv`: generate the `renv.lock` file
+
+:::
+::: {.column width="42%"}
+
+```r
+renv::init()
+renv::install("ggplot2")
+# or equivalently install.packages("ggplot2")
+renv::snapshot()
+```
+
+:::
+::::
+
+#### Example in Julia
+
+:::: {.columns}
+::: {.column width="75%"}
+
+`Pkg`: native `Julia` package manager (with generated `Project.toml` et `Manifest.toml` files)
+
+:::
+::: {.column width="25%"}
+
+```julia
+add Plots
+add IJulia
+```
+
+:::
+::::
+
+:::
+
+<small>Configuration file versionned and used during CI compilation/publication action</small>
+
+### Step 3: (re)production
+
+A `git push` command will trigger your article compilation (including computations) and publication as a [*github* page](https://pages.github.com)^[or as a *gitlab* page when *gitlab* will be supported (soon)]
+
+<small>See the preconfigured `.github/workflows/build.yml` file for the *github* action configuration^[and soon the `.gitlab-ci.yml` file for the *gitlab* CI/CD configuration]</small>
+
+## Author point of view (3/3)
+
+:::: {.columns}
+::: {.column width="70%"}
+
+<br>
+
+### Step 4: submit your article
+
+If the CI process succeeds, both HTML and PDF versions are published on the [*github-page*](https://computorg.github.io/template-computo-R/) associated to the repository
+
+<br/><br/>
+
+#### <s>Scholastica</s> Open review 
+
+<https://openreview.net/group?id=Computo>
+
+Submit:
+
+  - your article PDF (scientific content review)
+  - your git repository (source code and reproducibility review)
+
+:::
+
+::: {.column width="30%"}
+
+[![](img/computo_template_rendered.png)](https://github.com/computorg/template-computo-python/)
+
+[![](img/computo_openreview.png)](https://openreview.net/group?id=Computo)
+
+:::
+
+::::
+
+## Editor point of view
+
+:::: {.columns}
+::: {.column width="70%"}
+
+After a "traditionnal" review process, a 3 step procedure:
+
+1. Acceptance
+2. Pre-production
+3. Publication in Computo (with a DOI)
+
+including
+
+- Copy of the author git repository to <https://github.com/computorg/>
+- Final version formatting
+- Review report publication
+- Registration in the journal bibliographic data base
+- Copy of the repository to [Software Heritage](https://archive.softwareheritage.org/browse/search/?q=computorg%2Fpublished&with_visit=true&with_content=true) for archiving
+- Publication of the article on the journal website
+
+:::
+
+::: {.column width="30%"}
+
+[Task-list = github issue](https://github.com/computorg/published-paper-tsne/issues/5)
+
+[![](img/computo_template_issue_editor.png)](https://github.com/computorg/published-paper-tsne/issues/5)
+
+:::
+::::
+
+## 2year and a half report
+
+<br/>
+
+🥲 Fully operational + doi, ISSN
+
+🙂 7 published articles articles, 3 in preproduction, 6 under review (more details [here](https://computo.sfds.asso.fr/publications/))
+
+🙂 x presentations (Montpellier, Toronto, Humastica, Grenoble, RR2023, etc.)
+
+🙂 [French reproducible research network](https://www.recherche-reproductible.fr/)
+
+🤯 Difficult to find reviewers
+
+🤔 Institutional support?
+
+🤔 Changing of practices in the scientific community?
+
+<br/>
+
+## Discussion
+
+### About several choices
+
+- [`quarto`](https://quarto.org/): dynamic, agnostic language, [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software)^["free and open-source"], community-based ([`pandoc`](https://pandoc.org/)), Rstudio/Posit support
+- [`github`](https://github.com): dynamic, large user community but not institutional and limited computing resources
+
+### Comparison/inspiration
+
+- [Peer Community-In (PCI)](https://peercommunityin.org/)^[Computo is a [PCI-friendly journal](https://peercommunityin.org/pci-friendly-journals/)], [EpiSciences](https://www.episciences.org/): different philosophy and/or functioning
+- <https://rescience.github.io/>: "remake" published articles
+- <https://distill.pub> (discontinued): technically more complicated and only ML/AI oriented
+
+## Perspectives
+
+<br>
+
+- Provision of computing resources (to be able to run all computations)
+- Full *gitlab* support (CI/CD, docker, registry, etc.)
+- Switch to a french institutional gitlab forge?
+- Improve long-term reproducibility stack ([docker](https://www.docker.com/) container, [GUIX](https://guix.gnu.org) fully reproducible environment?)
+
+<br>
+
+### How to help?
+
+:::: {.columns}
+::: {.column width="50%"}
+
+- By submitting^[<https://computo.sfds.asso.fr/submit/>] your work!
+
+:::
+::: {.column width="50%"}
+
+- By becoming reviewer^[contact us at <computo@sfds.asso.fr>]
+
+:::
+::::
+
+## Regarding the logo
+
+<br>
+
+![](img/computo_concept.png){width=600px fig-align="center"}
+
+## References {.scrollable .smaller}
+
+::: {#refs}
+:::
+
+# Workshop
+
+## Quarto
+
+Quarto is a new document format that is designed to make it easy to create, share, and publish reproducible research. In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to submit our document to Computo.
 
 ## Learning objectives
 
@@ -15,7 +599,7 @@ Quarto is a new document format that is designed to make it easy to create, shar
 - Learn how to submit a quarto document to Computo
 - How to navigate the Computo submission process
 
-# Getting started
+## Getting started
 
 To get started you will need to clone the mock repository for this workshop. You can do this by running the following command in your terminal:
 
@@ -27,7 +611,7 @@ To get started you will need to clone the mock repository for this workshop. You
 
 ### Julia version ?
 
-# The main pipeline, step by step
+## The main pipeline, step by step
 
 - Template installation
 - computing environment : renv, conda, etc.
@@ -59,4 +643,4 @@ Scientific and editorial reproducibility
 
 ### Computo publication process
 
-# Conclusion
+## Conclusion

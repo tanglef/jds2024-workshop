@@ -1,0 +1,77 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
+/*-- scss:defaults --*/
+
+$grey-color:          #828282 !default;
+$grey-color-light:    lighten($grey-color, 40%);
+$grey-color-dark:     darken($grey-color, 25%);
+$white-color: #ffffff !default;
+$black-color: #000000 !default;
+
+$dark-blue:           #0F2E3D !default;
+$computo-color:        #034E79 !default;
+$computo-color-dark:    darken($computo-color, 10%);
+$computo-color-light:   lighten($computo-color, 60%);
+$code-bg-color-light:     rgba($computo-color, 0.05);
+$code-bg-color-dark:     darken($computo-color, 25%);
+
+$callout-border-color: $computo-color-light !important;
+$callout-color-note: $computo-color-dark;
+$callout-header-color: $computo-color-dark;
+$callout-border-width: 6px ;
+
+$callout-color: $black-color ;
+$callout-bg-color: $code-bg-color-light !important;
+$callout-border-color: $code-bg-color-dark !important;
+$callout-caption-color: $dark-blue;
+$callout-border-width: 6px ;
+
+$body-bg: #fff;
+$body-color: #000 ;
+$link-color: $computo-color;
+
+// fonts
+$headings-font-weight:  500 !default;
+$h2-font-size: 1.6rem !default;
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$ff-title: 'Oswald', sans-serif;
+$ff-main: 'Open Sans', sans-serif;
+
+// headings
+$presentation-heading-font: 'Oswald', sans serif !default;
+$presentation-heading-color: $computo-color-dark !default;
+$presentation-heading-font-weight: 500; 
+
+/*-- scss:rules --*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $presentation-heading-font ;
+  font-weight: 500;
+  color: $presentation-heading-color !important;
+}
+
+.small{
+  font-size: 100%;
+}
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+.callout.callout-style-simple {
+  padding: 0em 0.5em;
+  color: $callout-color ;
+  background-color: $callout-bg-color;
+  border-left: solid 4px $callout-border-color 0.3rem;
+  border-right: solid 1px $callout-border-color;
+  border-top: solid 1px $callout-border-color;
+  border-bottom: solid 1px $callout-border-color;
+  display: flex;
+}
+
+.csl-bib-body{
+  font-size: 70%;
+}
+
