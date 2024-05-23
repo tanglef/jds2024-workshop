@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Computo-workshop - Workshop on Reproducible Research</title>
+<title>Computo workshop - Workshop on Reproducible Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -67,6 +120,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -79,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Computo-workshop</span>
+    <span class="navbar-title">Computo workshop</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -90,11 +172,11 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">Site</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./_slides/index.html"> 
+<span class="menu-text">Slides</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -112,21 +194,61 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#short-introduction-to-computo" id="toc-short-introduction-to-computo" class="nav-link active" data-scroll-target="#short-introduction-to-computo">Short introduction to Computo</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#team" id="toc-team" class="nav-link" data-scroll-target="#team">Team</a></li>
+  <li><a href="#origin-2020s" id="toc-origin-2020s" class="nav-link" data-scroll-target="#origin-2020s">Origin (~ 2020s)</a></li>
+  <li><a href="#philosophy" id="toc-philosophy" class="nav-link" data-scroll-target="#philosophy">Philosophy</a></li>
+  <li><a href="#note-on-reproducible-research-desquilbet2019-hejblum2020-the_turing_way2022" id="toc-note-on-reproducible-research-desquilbet2019-hejblum2020-the_turing_way2022" class="nav-link" data-scroll-target="#note-on-reproducible-research-desquilbet2019-hejblum2020-the_turing_way2022">Note on reproducible research <span class="citation" data-cites="desquilbet2019 hejblum2020 the_turing_way2022">[@desquilbet2019; @hejblum2020; @the_turing_way2022]</span></a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
+  <ul class="collapse">
+  <li><a href="#economical-model" id="toc-economical-model" class="nav-link" data-scroll-target="#economical-model">“Economical” model</a></li>
   </ul></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
+  <li><a href="#functioning" id="toc-functioning" class="nav-link" data-scroll-target="#functioning">Functioning</a></li>
+  <li><a href="#note-on-literate-programming" id="toc-note-on-literate-programming" class="nav-link" data-scroll-target="#note-on-literate-programming">Note on literate programming</a></li>
+  <li><a href="#note-on-quarto" id="toc-note-on-quarto" class="nav-link" data-scroll-target="#note-on-quarto">Note on quarto</a></li>
+  <li><a href="#note-on-continuous-integration" id="toc-note-on-continuous-integration" class="nav-link" data-scroll-target="#note-on-continuous-integration">Note on continuous integration</a></li>
+  <li><a href="#tools-for-authors" id="toc-tools-for-authors" class="nav-link" data-scroll-target="#tools-for-authors">Tools for authors</a>
   <ul class="collapse">
+  <li><a href="#locally" id="toc-locally" class="nav-link" data-scroll-target="#locally">Locally</a></li>
+  </ul></li>
+  <li><a href="#author-point-of-view-13" id="toc-author-point-of-view-13" class="nav-link" data-scroll-target="#author-point-of-view-13">Author point of view (1/3)</a>
+  <ul class="collapse">
+  <li><a href="#step-0-setup-a-git-repository-for-your-article" id="toc-step-0-setup-a-git-repository-for-your-article" class="nav-link" data-scroll-target="#step-0-setup-a-git-repository-for-your-article">Step 0: setup a git repository for your article</a></li>
+  <li><a href="#step-1-write-your-article" id="toc-step-1-write-your-article" class="nav-link" data-scroll-target="#step-1-write-your-article">Step 1: write your article</a></li>
+  </ul></li>
+  <li><a href="#author-point-of-view-23" id="toc-author-point-of-view-23" class="nav-link" data-scroll-target="#author-point-of-view-23">Author point of view (2/3)</a>
+  <ul class="collapse">
+  <li><a href="#step-2-configure-the-environment-dependencies-management" id="toc-step-2-configure-the-environment-dependencies-management" class="nav-link" data-scroll-target="#step-2-configure-the-environment-dependencies-management">Step 2: configure the environment (dependencies management)</a></li>
+  <li><a href="#step-3-reproduction" id="toc-step-3-reproduction" class="nav-link" data-scroll-target="#step-3-reproduction">Step 3: (re)production</a></li>
+  </ul></li>
+  <li><a href="#author-point-of-view-33" id="toc-author-point-of-view-33" class="nav-link" data-scroll-target="#author-point-of-view-33">Author point of view (3/3)</a></li>
+  <li><a href="#editor-point-of-view" id="toc-editor-point-of-view" class="nav-link" data-scroll-target="#editor-point-of-view">Editor point of view</a></li>
+  <li><a href="#year-and-a-half-report" id="toc-year-and-a-half-report" class="nav-link" data-scroll-target="#year-and-a-half-report">2year and a half report</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a>
+  <ul class="collapse">
+  <li><a href="#about-several-choices" id="toc-about-several-choices" class="nav-link" data-scroll-target="#about-several-choices">About several choices</a></li>
+  <li><a href="#comparisoninspiration" id="toc-comparisoninspiration" class="nav-link" data-scroll-target="#comparisoninspiration">Comparison/inspiration</a></li>
+  </ul></li>
+  <li><a href="#perspectives" id="toc-perspectives" class="nav-link" data-scroll-target="#perspectives">Perspectives</a>
+  <ul class="collapse">
+  <li><a href="#how-to-help" id="toc-how-to-help" class="nav-link" data-scroll-target="#how-to-help">How to help?</a></li>
+  </ul></li>
+  <li><a href="#regarding-the-logo" id="toc-regarding-the-logo" class="nav-link" data-scroll-target="#regarding-the-logo">Regarding the logo</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  <li><a href="#workshop" id="toc-workshop" class="nav-link" data-scroll-target="#workshop">Workshop</a>
+  <ul class="collapse">
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#creating-a-repo-from-a-template" id="toc-creating-a-repo-from-a-template" class="nav-link" data-scroll-target="#creating-a-repo-from-a-template">Creating a repo from a template</a>
   <ul class="collapse">
   <li><a href="#python-version" id="toc-python-version" class="nav-link" data-scroll-target="#python-version">Python version</a></li>
   <li><a href="#r-version" id="toc-r-version" class="nav-link" data-scroll-target="#r-version">R version</a></li>
   <li><a href="#julia-version" id="toc-julia-version" class="nav-link" data-scroll-target="#julia-version">Julia version ?</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#the-main-pipeline-step-by-step" id="toc-the-main-pipeline-step-by-step" class="nav-link" data-scroll-target="#the-main-pipeline-step-by-step">The main pipeline, step by step</a>
-  <ul class="collapse">
+  <li><a href="#the-main-pipeline-step-by-step" id="toc-the-main-pipeline-step-by-step" class="nav-link" data-scroll-target="#the-main-pipeline-step-by-step">The main pipeline, step by step</a></li>
   <li><a href="#reproducibility-considerations" id="toc-reproducibility-considerations" class="nav-link" data-scroll-target="#reproducibility-considerations">Reproducibility considerations</a>
   <ul class="collapse">
   <li><a href="#general-and-theoretical-considerations" id="toc-general-and-theoretical-considerations" class="nav-link" data-scroll-target="#general-and-theoretical-considerations">General and theoretical considerations</a></li>
@@ -138,8 +260,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#computo-review-process" id="toc-computo-review-process" class="nav-link" data-scroll-target="#computo-review-process">Computo review process</a></li>
   <li><a href="#computo-publication-process" id="toc-computo-publication-process" class="nav-link" data-scroll-target="#computo-publication-process">Computo publication process</a></li>
   </ul></li>
-  </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -166,9 +288,542 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>Quarto is a new document format that is designed to make it easy to create, share, and publish reproducible research. In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to submit our document to Computo, an online journal for publishing reproducible research.</p>
+<section id="short-introduction-to-computo" class="level1">
+<h1>Short introduction to Computo</h1>
+<section id="team" class="level2">
+<h2 class="anchored" data-anchor-id="team">Team</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Editorial board</p>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:20%;">
+<p>IT support</p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:20%;">
+<section id="julien-chiquet-chief-editor" class="level4">
+<h4 class="anchored" data-anchor-id="julien-chiquet-chief-editor">Julien Chiquet <small>(chief editor)</small></h4>
+<p><small>Stat. learning, DR INRAE<br> Paris-Saclay University</small></p>
+<p><img src="./people/julien.jpg" class="img-fluid" width="120"></p>
+</section>
+</div><div class="column" style="width:20%;">
+<section id="pierre-neuvial" class="level4">
+<h4 class="anchored" data-anchor-id="pierre-neuvial">Pierre Neuvial</h4>
+<p><small>Statistique, DR CNRS<br> IMT Toulouse<br></small></p>
+<p><img src="./people/pierre.jpg" class="img-fluid" width="120"></p>
+</section>
+</div><div class="column" style="width:20%;">
+<section id="mathurin-massias" class="level4">
+<h4 class="anchored" data-anchor-id="mathurin-massias">Mathurin Massias</h4>
+<p><small>Optim./Machine-Learning<br> CR INRIA Lyon</small></p>
+<p><img src="./people/mathurin.jpg" class="img-fluid" width="120"></p>
+</section>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:20%;">
+<section id="fra.-dav.-collin" class="level4">
+<h4 class="anchored" data-anchor-id="fra.-dav.-collin">Fra.-Dav. Collin</h4>
+<p><small>CS/Stats/ML, IR CNRS<br> IMAG, Montpellier University</small></p>
+<p><img src="./people/fradav.jpg" class="img-fluid" width="120"></p>
+</section>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:20%;">
+<section id="nelle-varoquaux" class="level4">
+<h4 class="anchored" data-anchor-id="nelle-varoquaux">Nelle Varoquaux</h4>
+<p><small>Machine learning, CR CNRS<br> Grenoble Alpes University</small></p>
+<p><img src="./people/nelle.jpg" class="img-fluid" width="120"></p>
+</section>
+</div><div class="column" style="width:20%;">
+<section id="marie-pierre-étienne" class="level4">
+<h4 class="anchored" data-anchor-id="marie-pierre-étienne">Marie-Pierre Étienne</h4>
+<p><small>Statistics, MCF<br> Institut Agro Rennes-Angers</small></p>
+<p><img src="./people/marie-pierre.jpg" class="img-fluid" width="120"></p>
+</section>
+</div><div class="column" style="width:20%;">
+<section id="chloé-azencott" class="level4">
+<h4 class="anchored" data-anchor-id="chloé-azencott">Chloé Azencott</h4>
+<p><small>Machine Learning <br> CR MinesParisTech</small></p>
+<p><img src="./people/chloe.jpg" class="img-fluid" width="120"></p>
+</section>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:20%;">
+<section id="ghislain-durif" class="level4">
+<h4 class="anchored" data-anchor-id="ghislain-durif">Ghislain Durif</h4>
+<p><small>Stats/ML/dev, IR CNRS<br> LBMC, ENS LYON</small></p>
+<p><img src="./people/ghislain.jpg" class="img-fluid" width="120"></p>
+</section>
+</div>
+</div>
+</section>
+<section id="origin-2020s" class="level2">
+<h2 class="anchored" data-anchor-id="origin-2020s">Origin (~ 2020s)</h2>
+<p><a href="https://www.sfds.asso.fr/">French statistical society</a> appoints a “publication” commitee (lead by Julien then Pierre) to develop a new journal</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assessment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>😔 Multiplication of “traditional” journals…</p>
+<p>😔 No valorization of “negative” results</p>
+<p>😥 No or not enough valorization of source codes and case studies</p>
+<p>😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) <span class="citation" data-cites="hanson2023">[@hanson2023]</span></p>
+<p>😱 Issue with <em>scientific</em> reproducibility (analyses, experiments) <span class="citation" data-cites="ioannidis2005 steen2011 allison2016 bastian2016 whitfield2021 hernandez2023">[@ioannidis2005; @steen2011; @allison2016; @bastian2016; @whitfield2021; @hernandez2023]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Point of view
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Need for renewal regarding scientific research implementation</li>
+<li>Need for higher standard regarding result publications</li>
+</ul>
+</div>
+</div>
+<p>⇝ Emergence of “Computo” idea</p>
+</section>
+<section id="philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="philosophy">Philosophy</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Scientific perimeter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Promote contribution in <strong>statistics</strong> and <strong>machine learning</strong> that provide insight into which models or methods are more appropriate to address a specific scientific question</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Open access
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:90%;">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Open_access#Diamond/platinum_OA">“Diamond” open access</a> (free to publish and free to read, possible to reuse)</li>
+<li>🅭 🅯 Content published under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> license (attribution, share, adapt)</li>
+<li>Reviews and discussions available after acceptance for publication (anonymous reviews)</li>
+</ul>
+<p>⇝ In accordance with <a href="https://www.budapestopenaccessinitiative.org/">Budapest Open Access Initiative (BOAI)</a> and <a href="https://www.coalition-s.org/addendum-to-the-coalition-s-guidance-on-the-implementation-of-plan-s/principles-and-implementation/">Plan S</a></p>
+</div><div class="column" style="width:10%;">
+<p><img src="img/open_access_logo.png" class="img-fluid" width="70"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reproducible
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Numerical (statistical) reproducibility is a necessary condition</li>
+<li>Source code and data should be available, at least partly executed and fully executable</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="note-on-reproducible-research-desquilbet2019-hejblum2020-the_turing_way2022" class="level2">
+<h2 class="anchored" data-anchor-id="note-on-reproducible-research-desquilbet2019-hejblum2020-the_turing_way2022">Note on reproducible research <span class="citation" data-cites="desquilbet2019 hejblum2020 the_turing_way2022">[@desquilbet2019; @hejblum2020; @the_turing_way2022]</span></h2>
+<section id="why-reproducing-scientific-results" class="level4">
+<h4 class="anchored" data-anchor-id="why-reproducing-scientific-results">Why reproducing scientific results?</h4>
+<ul>
+<li>To strengthen their credibility</li>
+<li>To check for errors (everyone makes error at some point!!!)</li>
+<li>To build new research upon them (science is incremental)</li>
+</ul>
+</section>
+<section id="issues" class="level4">
+<h4 class="anchored" data-anchor-id="issues">Issues?</h4>
+<ul>
+<li>Reproduce numerical scientific results is often difficult (technology/environment evolution, source code/environment configuration/software partially available or not available)</li>
+<li>Waste of time and resources to reproduce existing non-reproducible results</li>
+</ul>
+</section>
+<section id="reproducible-research" class="level4">
+<h4 class="anchored" data-anchor-id="reproducible-research">Reproducible research?</h4>
+<ul>
+<li>For others but also <strong>for your future self</strong></li>
+<li>Improve result credibility</li>
+<li>Facilitate future research works</li>
+</ul>
+</section>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>Official launch at the end of 2021</p>
+<center>
+<a href="https://computo.sfds.asso.fr"><img src="img/computo_website.png" height="280"></a> <a href="https://github.com/computorg/"><img src="img/computo_github-group.png" height="280"></a>
+</center>
+<section id="economical-model" class="level3">
+<h3 class="anchored" data-anchor-id="economical-model">“Economical” model</h3>
+<ul>
+<li>A few tenacious people…</li>
+<li>Free/Open-source community tools (Pandoc, Quarto, Git forge)</li>
+<li>Institutional support (INRAE, INRIA, CNRS, SFdS)</li>
+</ul>
+</section>
+</section>
+<section id="functioning" class="level2">
+<h2 class="anchored" data-anchor-id="functioning">Functioning</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<section id="writing-system" class="level3">
+<h3 class="anchored" data-anchor-id="writing-system">Writing system</h3>
+<p>Notebook and literate programming<br><small>text (markdown) + math (<span class="math inline">\(\LaTeX\)</span>) + code (Python/R/Julia), references (bib<span class="math inline">\(\TeX\)</span>)</small></p>
+</section>
+<section id="publication-system" class="level3">
+<h3 class="anchored" data-anchor-id="publication-system">Publication system</h3>
+<p>Environment management, Compilation, Multi-format publication (pdf, html)<br><small>Continuous integration/Continuous deployment (CI/CD)</small></p>
+</section>
+<section id="reviewing-system" class="level3">
+<h3 class="anchored" data-anchor-id="reviewing-system">Reviewing system</h3>
+<ul>
+<li>Anonymous exchange published after acceptance</li>
+<li>Reviewer pool (you can join)</li>
+<li>[<em>Ongoing switch from Scholastica to Open review</em>]</li>
+</ul>
+</section>
+</div><div class="column" style="width:35%;">
+<section id="solutionsprototype" class="level4">
+<h4 class="anchored" data-anchor-id="solutionsprototype">Solutions/Prototype</h4>
+<p>Reproducible article and computations</p>
+<p><a href="https://quarto.org"><img src="img/quarto.png" height="40"></a></p>
+<p>Automatic editorial reproducibility</p>
+<p><a href="https://github.com/features/actions"><img src="img/github_actions.png" height="80"></a></p>
+<p>Scientific validation</p>
+<p><a href="https://openreview.net/"><img src="img/openreview.png" height="80"></a></p>
+</section>
+</div>
+</div>
+</section>
+<section id="note-on-literate-programming" class="level2">
+<h2 class="anchored" data-anchor-id="note-on-literate-programming">Note on literate programming</h2>
+<p><br></p>
+<ul>
+<li>Literate programming <span class="citation" data-cites="knuth1984">[@knuth1984]</span>: notebook including text and code</li>
+<li>Markup formatting language: e.g.&nbsp;<a href="https://fr.wikipedia.org/wiki/Markdown"><code>markdown</code></a></li>
+<li>Separate content from rendering (≠ <a href="https://en.wikipedia.org/wiki/WYSIWYG">“what you see is what you get”</a> editors)</li>
+<li>Rendering includes text, code and results (from code computations)</li>
+</ul>
+<p><br></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My article"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>We compute 1+1:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="sc">\`\`\`</span>{r}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>1+1</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="sc">\`\`\`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="note-on-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="note-on-quarto">Note on quarto</h2>
+<p><br></p>
+<div class="r-stack">
+<p><a href="https://quarto.org"><img src="img/quarto.png" height="80"></a> <a href="https://quarto.org" class="uri">https://quarto.org</a></p>
+</div>
+<p><br></p>
+<ul>
+<li>Generalization of <a href="https://pkgs.rstudio.com/rmarkdown/"><code>Rmarkdown</code></a></li>
+<li>Relying on top community tools like universal document converter <a href="https://pandoc.org/"><code>Pandoc</code></a></li>
+<li>Developed and supported by RStudio/Posit</li>
+<li>Native support of complex documents (website, articles, books) and multiple languages for computations (R, Python, Julia)</li>
+<li>Management of references, citations, figures, tables, metadata, etc.</li>
+</ul>
+</section>
+<section id="note-on-continuous-integration" class="level2">
+<h2 class="anchored" data-anchor-id="note-on-continuous-integration">Note on <a href="https://en.wikipedia.org/wiki/Continuous_integration">continuous integration</a></h2>
+<ul>
+<li>Implementation in git forges (e.g.&nbsp;<a href="https://github.com/features/actions">github actions</a> or <a href="https://about.gitlab.com/topics/ci-cd/">gitlab CI/CD</a>)</li>
+<li>Triggered by commits</li>
+<li>Automatic tests</li>
+<li>Automatic deployment: package/software publication, website</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg"><img src="img/continuous_integration.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></a></p>
+</figure>
+</div>
+<div class="r-stack">
+<p><small>Credit: Pratik89Roy <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA-4.0</a> from <a href="https://en.wikipedia.org/wiki/File:Continuous_Integration.jpg">Wikimedia</a></small></p>
+</div>
+</section>
+<section id="tools-for-authors" class="level2">
+<h2 class="anchored" data-anchor-id="tools-for-authors">Tools for authors</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="document-model" class="level4">
+<h4 class="anchored" data-anchor-id="document-model">Document model</h4>
+<p><a href="https://computorg.github.io/computo-quarto-extension/"><code>quarto</code> Computo extension</a> <a href="https://github.com/computorg/computo-quarto-extension"><img src="img/computo_repo_quarto_extension.png" height="300"></a></p>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="document-template" class="level4">
+<h4 class="anchored" data-anchor-id="document-template">Document template</h4>
+<p><a href="https://computo.sfds.asso.fr/repos/">Git <code>template</code> repository</a></p>
+<p>with template notebook document + doc + pre-configured compilation and publication setup</p>
+<p><a href="https://computo.sfds.asso.fr/repos/"><img src="img/computo_template_repositories.png" class="img-fluid"></a></p>
+</section>
+</div>
+</div>
+<section id="locally" class="level3">
+<h3 class="anchored" data-anchor-id="locally">Locally</h3>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>Text editor/IDE (VS Code, Rstudio, NeoVim, etc.)</li>
+<li>Quarto (compilation)</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<ul>
+<li>Julia / R / Python code + computations</li>
+<li>git versioning system</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="author-point-of-view-13" class="level2">
+<h2 class="anchored" data-anchor-id="author-point-of-view-13">Author point of view (1/3)</h2>
+<p><br></p>
+<section id="step-0-setup-a-git-repository-for-your-article" class="level3">
+<h3 class="anchored" data-anchor-id="step-0-setup-a-git-repository-for-your-article">Step 0: setup a git repository for your article</h3>
+<div class="columns">
+<div class="column" style="width:58%;">
+<p>Startup from a template repository (<a href="https://github.com/computorg/template-computo-R">R</a>, <a href="https://github.com/computorg/template-computo-python">Python</a>, <a href="https://github.com/computorg/template-computo-julia">Julia</a>)</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can host your git repository on <a href="https://github.com"><strong>github</strong></a> and soon an any <strong>gitlab</strong> forge<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+</div>
+</div>
+</div><div class="column" style="width:42%;">
+<p><a href="https://github.com/computorg/template-computo-R"><img src="img/computo_use_template.png" class="img-fluid"></a></p>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="step-1-write-your-article" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-write-your-article">Step 1: write your article</h3>
+<p>Let’s go, locally (same spirit as Jupyter/Rmarkdown notebooks)</p>
+</section>
+</section>
+<section id="author-point-of-view-23" class="level2">
+<h2 class="anchored" data-anchor-id="author-point-of-view-23">Author point of view (2/3)</h2>
+<section id="step-2-configure-the-environment-dependencies-management" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-configure-the-environment-dependencies-management">Step 2: configure the environment (dependencies management)</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Example in Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Example in R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Example in Julia</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="columns">
+<div class="column" style="width:75%;">
+<p><code>venv</code>: use a virtual environment and generate the <code>requirements.txt</code> file</p>
+</div><div class="column" style="width:25%;">
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># requirements.txt</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">jupyter</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">matplotlib</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">numpy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="columns">
+<div class="column" style="width:58%;">
+<p><code>renv</code>: generate the <code>renv.lock</code> file</p>
+</div><div class="column" style="width:42%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or equivalently install.packages("ggplot2")</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="columns">
+<div class="column" style="width:75%;">
+<p><code>Pkg</code>: native <code>Julia</code> package manager (with generated <code>Project.toml</code> et <code>Manifest.toml</code> files)</p>
+</div><div class="column" style="width:25%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>add Plots</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>add IJulia</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><small>Configuration file versionned and used during CI compilation/publication action</small></p>
+</section>
+<section id="step-3-reproduction" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-reproduction">Step 3: (re)production</h3>
+<p>A <code>git push</code> command will trigger your article compilation (including computations) and publication as a <a href="https://pages.github.com"><em>github</em> page</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><small>See the preconfigured <code>.github/workflows/build.yml</code> file for the <em>github</em> action configuration<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></small></p>
+</section>
+</section>
+<section id="author-point-of-view-33" class="level2">
+<h2 class="anchored" data-anchor-id="author-point-of-view-33">Author point of view (3/3)</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><br></p>
+<section id="step-4-submit-your-article" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-submit-your-article">Step 4: submit your article</h3>
+<p>If the CI process succeeds, both HTML and PDF versions are published on the <a href="https://computorg.github.io/template-computo-R/"><em>github-page</em></a> associated to the repository</p>
+<p><br><br></p>
+<section id="scholastica-open-review" class="level4">
+<h4 class="anchored" data-anchor-id="scholastica-open-review"><s>Scholastica</s> Open review</h4>
+<p><a href="https://openreview.net/group?id=Computo" class="uri">https://openreview.net/group?id=Computo</a></p>
+<p>Submit:</p>
+<ul>
+<li>your article PDF (scientific content review)</li>
+<li>your git repository (source code and reproducibility review)</li>
+</ul>
+</section>
+</section>
+</div><div class="column" style="width:30%;">
+<p><a href="https://github.com/computorg/template-computo-python/"><img src="img/computo_template_rendered.png" class="img-fluid"></a></p>
+<p><a href="https://openreview.net/group?id=Computo"><img src="img/computo_openreview.png" class="img-fluid"></a></p>
+</div>
+</div>
+</section>
+<section id="editor-point-of-view" class="level2">
+<h2 class="anchored" data-anchor-id="editor-point-of-view">Editor point of view</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>After a “traditionnal” review process, a 3 step procedure:</p>
+<ol type="1">
+<li>Acceptance</li>
+<li>Pre-production</li>
+<li>Publication in Computo (with a DOI)</li>
+</ol>
+<p>including</p>
+<ul>
+<li>Copy of the author git repository to <a href="https://github.com/computorg/" class="uri">https://github.com/computorg/</a></li>
+<li>Final version formatting</li>
+<li>Review report publication</li>
+<li>Registration in the journal bibliographic data base</li>
+<li>Copy of the repository to <a href="https://archive.softwareheritage.org/browse/search/?q=computorg%2Fpublished&amp;with_visit=true&amp;with_content=true">Software Heritage</a> for archiving</li>
+<li>Publication of the article on the journal website</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><a href="https://github.com/computorg/published-paper-tsne/issues/5">Task-list = github issue</a></p>
+<p><a href="https://github.com/computorg/published-paper-tsne/issues/5"><img src="img/computo_template_issue_editor.png" class="img-fluid"></a></p>
+</div>
+</div>
+</section>
+<section id="year-and-a-half-report" class="level2">
+<h2 class="anchored" data-anchor-id="year-and-a-half-report">2year and a half report</h2>
+<p><br></p>
+<p>🥲 Fully operational + doi, ISSN</p>
+<p>🙂 7 published articles articles, 3 in preproduction, 6 under review (more details <a href="https://computo.sfds.asso.fr/publications/">here</a>)</p>
+<p>🙂 x presentations (Montpellier, Toronto, Humastica, Grenoble, RR2023, etc.)</p>
+<p>🙂 <a href="https://www.recherche-reproductible.fr/">French reproducible research network</a></p>
+<p>🤯 Difficult to find reviewers</p>
+<p>🤔 Institutional support?</p>
+<p>🤔 Changing of practices in the scientific community?</p>
+<p><br></p>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<section id="about-several-choices" class="level3">
+<h3 class="anchored" data-anchor-id="about-several-choices">About several choices</h3>
+<ul>
+<li><a href="https://quarto.org/"><code>quarto</code></a>: dynamic, agnostic language, <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FOSS</a><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, community-based (<a href="https://pandoc.org/"><code>pandoc</code></a>), Rstudio/Posit support</li>
+<li><a href="https://github.com"><code>github</code></a>: dynamic, large user community but not institutional and limited computing resources</li>
+</ul>
+</section>
+<section id="comparisoninspiration" class="level3">
+<h3 class="anchored" data-anchor-id="comparisoninspiration">Comparison/inspiration</h3>
+<ul>
+<li><a href="https://peercommunityin.org/">Peer Community-In (PCI)</a><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, <a href="https://www.episciences.org/">EpiSciences</a>: different philosophy and/or functioning</li>
+<li><a href="https://rescience.github.io/" class="uri">https://rescience.github.io/</a>: “remake” published articles</li>
+<li><a href="https://distill.pub" class="uri">https://distill.pub</a> (discontinued): technically more complicated and only ML/AI oriented</li>
+</ul>
+</section>
+</section>
+<section id="perspectives" class="level2">
+<h2 class="anchored" data-anchor-id="perspectives">Perspectives</h2>
+<p><br></p>
+<ul>
+<li>Provision of computing resources (to be able to run all computations)</li>
+<li>Full <em>gitlab</em> support (CI/CD, docker, registry, etc.)</li>
+<li>Switch to a french institutional gitlab forge?</li>
+<li>Improve long-term reproducibility stack (<a href="https://www.docker.com/">docker</a> container, <a href="https://guix.gnu.org">GUIX</a> fully reproducible environment?)</li>
+</ul>
+<p><br></p>
+<section id="how-to-help" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-help">How to help?</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>By submitting<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> your work!</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>By becoming reviewer<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="regarding-the-logo" class="level2">
+<h2 class="anchored" data-anchor-id="regarding-the-logo">Regarding the logo</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/computo_concept.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+</figure>
+</div>
+</section>
+<section id="references" class="level2 scrollable smaller">
+<h2 class="scrollable smaller anchored" data-anchor-id="references">References</h2>
+<div id="refs" role="list">
+
+</div>
+</section>
+</section>
+<section id="workshop" class="level1">
+<h1>Workshop</h1>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>Quarto is a new document format that is designed to make it easy to create, share, and publish reproducible research. In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to submit our document to Computo.</p>
+</section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ul>
@@ -179,10 +834,10 @@ ul.task-list li input[type="checkbox"] {
 <li>How to navigate the Computo submission process</li>
 </ul>
 </section>
-</section>
-<section id="getting-started" class="level1">
-<h1>Getting started</h1>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <p>To get started you will need to clone the mock repository for this workshop. You can do this by running the following command in your terminal:</p>
+</section>
 <section id="creating-a-repo-from-a-template" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-repo-from-a-template">Creating a repo from a template</h2>
 <section id="python-version" class="level3">
@@ -195,9 +850,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="julia-version">Julia version ?</h3>
 </section>
 </section>
-</section>
-<section id="the-main-pipeline-step-by-step" class="level1">
-<h1>The main pipeline, step by step</h1>
+<section id="the-main-pipeline-step-by-step" class="level2">
+<h2 class="anchored" data-anchor-id="the-main-pipeline-step-by-step">The main pipeline, step by step</h2>
 <ul>
 <li>Template installation</li>
 <li>computing environment : renv, conda, etc.</li>
@@ -205,6 +859,7 @@ ul.task-list li input[type="checkbox"] {
 <li>rendering locally</li>
 <li>pushing to github</li>
 </ul>
+</section>
 <section id="reproducibility-considerations" class="level2">
 <h2 class="anchored" data-anchor-id="reproducibility-considerations">Reproducibility considerations</h2>
 <section id="general-and-theoretical-considerations" class="level3">
@@ -239,14 +894,26 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="computo-publication-process">Computo publication process</h3>
 </section>
 </section>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>with CI/CD support<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>or as a <em>gitlab</em> page when <em>gitlab</em> will be supported (soon)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>and soon the <code>.gitlab-ci.yml</code> file for the <em>gitlab</em> CI/CD configuration<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>“free and open-source”<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Computo is a <a href="https://peercommunityin.org/pci-friendly-journals/">PCI-friendly journal</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://computo.sfds.asso.fr/submit/" class="uri">https://computo.sfds.asso.fr/submit/</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>contact us at <a href="mailto:computo@sfds.asso.fr" class="email">computo@sfds.asso.fr</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
