@@ -7,12 +7,6 @@ project:
   resources:
     - "figures/*.svg"
 
-
-footer: <https://computo.sfds.asso.fr>
-logo: img/logo_text_vertical.png
-date: last-modified
-date-format: long
-lang: en
 format: 
   revealjs:
     width: 1240
@@ -27,8 +21,8 @@ format:
       data-background-size: 18%
       data-background-position: top 25px left	25px
     preview-links: auto
-bibliography: references.bib
-csl: journal-of-open-research-software.csl
-editor:
-  render-on-save: true
+
 slide-level: 2
+
+filters: 
+  - reveal-header
