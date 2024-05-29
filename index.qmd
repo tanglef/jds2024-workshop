@@ -120,7 +120,34 @@ IT support
 :::
 :::
 
-## Pre-Computo era {auto-animate=true}
+## What is reproducible research?
+
+Fundamentally, it provides three things:
+
+:::: { layout="[[20,80],[20,80],[20,80]]" layout-valign="center"}
+
+![](img/mix.svg){ width="100" }
+
+:::{.fragment}
+Tools to reproduce the results (that’s like cooking)
+:::
+
+
+![](img/recipe.svg){ width="100" }
+
+:::{.fragment}
+A “recipe” to reproduce the results (still like cooking)
+:::
+
+![](img/head-side-thinking.svg){ width="100" height="100" }
+
+:::{.fragment}
+A path to understand the results and the process that led to them (unlike cooking…^[Even so, we may discuss the fact that blindly following recipes will not make you a good cook.])
+:::
+
+::::
+
+## Pre-Computo era
 
 :::::{.r-stack}
 ::: {layout-ncol=2 .fragment }
@@ -134,46 +161,50 @@ The pdf era and paper submission.
 
 The reproducibility was not a priority:
 
--   difficult to find code, data
--   even methodology details may not be documented
+- Tools has to be bought, installed, and maintained 
+- Data and code were not shared (social engineering
+- Even methodology details are often missing
 ::::
+
 
 :::
 
-![](img/perplex-scentist.jpg){ .center .fragment width="400"}
+![](img/perplex-scentist.jpg){ .center .fragment width="600"}
 
 :::::
 
+::: {.notes}
+Social engineering required to get reproducible results: at best you just have to ask the authors, at worst you have to reverse-engineer everything… and have no guarantee whatsoever to get to the same results, when authors are in a "Après moi, le déluge" mood and ditch, forget or let it crumble once the paper is published.
+:::
 
 ## Pre-Computo era (2)
 
 
-![](img/minority-report_header.webp){width="600" fig-align="center" .fragment}
+![](img/minority-report_header.webp){ width="600" fig-align="center" }
 
 :::{.fragment}
 
-And then there was distill.pub @olah2017research
+And then in the Machine Learning domain, there was [distill.pub](https://distill.pub/2016/misread-tsne/){preview-link="true"} @olah2017research
 
 ::::{.incremental}
--   state-of-the art visualizations
--   paradigm shift in the scientific publication: **“distillation” of complex ideas**
--   100% reproducible (just a git clone and a few standard commands)
+- state-of-the art visualizations
+- paradigm shift in the scientific publication: **“distillation” of complex ideas**
+- 100% reproducible (just a git clone and a few standard commands)
 ::::
 
 :::
 
-:::{.fragment}
+:::{ .fragment style="font-size: 1.8em;"}
 but…
 :::
 
 ## Pre-Computo era (3)
 
-::::{.r-stack}
-:::{ layout-ncol="2"}
+:::{ layout="[45,-10,45]"}
 
 ![](img/hard-work.webp)
 
-::::{}
+:::::{}
 
 :::{.fragment}
 … **engineering was too complex** for the average scientist (a lot of javascript, etc.)
@@ -183,30 +214,69 @@ but…
 In fact, the distill.pub project was discontinued in 2021 @team2021distill
 :::
 
-::::
+:::::{.content-hidden unless-format="revealjs"}
+::::{.r-stack}
 
+:::{.r-fit-text layout-align="center" style="color: lightgray;"}
+distill.pub
 :::
 
-![](img/RIP.png){width="800" fig-align="center" .fragment }
+![](img/RIP.png){width="400" fig-align="center" .fragment }
 
 ::::
 
-## Pre-Computo era (4) The Rise of the Pragmatic
+:::::
+:::::
+:::
+
+::: {.notes}
+Due to a serie of burnouts from the staff
+:::
+
+:::::{.content-hidden unless-format="revealjs"}
+
+## The Rise of the Pragmatic { auto-animate=true }
 
 [distill.pub](https://distill.pub)’s goals were right, but they outpaced themselves in terms of development complexity.
 
-. . .
+:::{.incremental}
+- **Computo** is a fresh start with a pragmatic approach
+- leverage what the scientific community is already using (Rmarkdown, Jupyter notebooks, etc.)
+:::
 
-**Computo** is a fresh start with a pragmatic approach: leverage
-what the scientific community is already using: Rmarkdown, Jupyter notebooks, etc.
 
-. . .
+:::{ .fragment .r-fit-text }
+$\Rightarrow$ *bring the community* to the higher standards
+:::
 
-$\Rightarrow$ bring the community to the higher standards
+## The Rise of the Pragmatic { auto-animate=true auto-animate-easing="ease-in-out }
+
+[distill.pub](https://distill.pub)’s goals were right, but they outpaced themselves in terms of development complexity.
+
+- **Computo** is a fresh start with a pragmatic approach
+- leverage what the scientific community is already using (Rmarkdown, Jupyter notebooks, etc.)
+
+:::{ data-id="where-computo-stands" }
+![](figures/where-computo-stands1.svg)
+:::
+:::::
+
+## The Rise of the Pragmatic { auto-animate=true auto-animate-easing="ease-in-out }
+
+[distill.pub](https://distill.pub)’s goals were right, but they outpaced themselves in terms of development complexity.
+
+- **Computo** is a fresh start with a pragmatic approach
+- leverage what the scientific community is already using (Rmarkdown, Jupyter notebooks, etc.)
+
+:::{ data-id="where-computo-stands" }
+![](figures/where-computo-stands2.svg)
+:::
 
 ## Origin of Computo (\~ 2020s)
 
 [French statistical society](https://www.sfds.asso.fr/) appoints a "publication" committee (lead by Julien then Pierre) to develop a new journal
+
+::::{layout-ncol="2"}
 
 :::{.callout-note .fragment}
 
@@ -227,8 +297,9 @@ $\Rightarrow$ bring the community to the higher standards
 -   Need for renewal regarding scientific research implementation
 -   Need for higher standard regarding result publications
 :::
+::::
 
-:::{.fragment}
+:::{.fragment layout-align="center" .r-fit-text}
 ⇝ Emergence of "Computo" idea
 :::
 
@@ -613,7 +684,7 @@ including
 -   Provision of computing resources (to be able to run all computations)
 -   Full *gitlab* support (CI/CD, docker, registry, etc.)
 -   Switch to a french institutional gitlab forge?
--   Improve long-term reproducibility stack ([docker](https://www.docker.com/) container, [GUIX](https://guix.gnu.org) fully reproducible environment?)
+-   Improve long-term reproducibility stack ([docker](https://www.docker.com/) container, [GUIX](https://guix.gnu.org) fully reproducible environment, only at the end of the publication process, )
 
 <br>
 
@@ -644,25 +715,74 @@ including
 ::: {#refs}
 :::
 
-# Workshop
+# Reproducibility considerations
+
+
+![Scientific and editorial reproducibility](figures/reproducible-sequence-orig.svg)
+
+
+## Two-fold reproducibility
+
+The global scientific workflow of a reproducible process for a Computo may be split in two types of steps:
+
+**External and Editorial**
+
+## External
+
+External
+: Process to obtain (intermediate) results utside of the notebook environment, for a list of reasons (non-exclusive to each other):
+
+- the process is too long to be conducted in a notebook
+- the data to be processed is too big to be handled directly in the notebook
+- it needs a specific environment (e.g. a cluster, with gpus, etc.)
+- it needs to involve specific languages (e.g. C, C++, Fortran, etc.) or build tools (e.g. make, cmake, etc.)
+
+<!-- ## Reproducibility considerations (3)
+
+In our context, **External** is “Computational reproducibility”, where the reproducibility is achieved by providing the code and the environment to run it, but not the results themselves. -->
+
+## Editorial
+
+Editorial
+: notebook rendering with the results of the external process
+
+:::{.callout-note title="Requirement"}
+If the notebook contains *everything* to produce the final document
+
+$\Rightarrow$ “Direct reproducibility” in the sense that the notebook is the only thing needed to reproduce the results.
+
+Ultimately, the workflow must end with a direct reproducibility step which concludes the whole process. 
+:::
+
+## Reproducibility considerations (5)
+
+Data transfer
+: When applicable, the switch from external to editorial reproducibility is done with a “data transfer” step, 
+
+data produced by the external process $\Rightarrow$ transferred to the notebook environment.
+
+:::{.callout-warning title="Requirement"}
+Not only the intermediate results are provided, but also **the code to transfer it in the notebook environment.** 
+
+They are a variety of software solutions to do so.
+:::
+
+## Examples of data transfer solutions
+
+### Intermediate results storage
+- Python: [`joblib.Memory`](https://joblib.readthedocs.io/en/latest/memory.html), caching mechanism for python functions, save the results of a function call to disk, and load it back later.
+- R : `.RData` file format, can be loaded back in R with the `load()` function.
+- If results are small enough, storing in a text file (e.g. `.csv`, `.tsv`, `.json`, etc.) is also a solution.
+
+### Transfer of the results to the notebook environment
+- (`.joblib` directory or `.Rdata` file) could be committed to the git repository, and directly loaded in the notebook environment.
+- Alternative, centralize input data (when large enough) and intermediate results on a shared scientific provider (we recommend [Zenodo](https://zenodo.org/) for this purpose), and download them in the notebook environment.
+
+# Workshop 
 
 ## Quarto
 
-In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to submit our document to Computo.
-
-## Getting started
-
-To get started you will need to clone the mock repository for this workshop. You can do this by running the following command in your terminal:
-
-## Mock repository
-
-## Creating a repo from a template
-
-### Python version
-
-### R version
-
-### Julia version ?
+In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to make the CI (continuous integration) working.
 
 ## The main pipeline, step by step
 
@@ -672,28 +792,47 @@ To get started you will need to clone the mock repository for this workshop. You
 -   rendering locally
 -   pushing to github
 
-## Reproducibility considerations
 
-### General and theoretical considerations
+## Getting started
 
-![Scientific and editorial reproducibility](figures/reproducible-sequence-orig.svg)
+To get started you will need to clone the mock template for this workshop. The template is available at 
 
-### Practical considerations
+https://github.com/computorg/template-jds2024
 
-#### Cache/freeze management in quarto
+:::{ .content-hidden unless-format="revealjs" }
+{{< qrcode https://github.com/computorg/template-jds2024 >}}
+:::
 
-#### .Rdata
+## Mock repository
 
-#### python : pickle/feather
+https://github.com/computorg/template-jds2024
 
-#### precomputed notebooks
+:::{ .content-hidden unless-format="revealjs" }
+{{< qrcode https://github.com/computorg/template-jds2024 >}}
+:::
 
-## Submission to Computo
+## Creating a repo from a template
 
-### Computo submission process
+1. On GitHub.com, navigate to the main page of the repository.
+2. Above the file list, click Use this template.
+3. Select Create a new repository.
+4. Select `Include all branches`.
 
-### Computo review process
+## Language version
 
-### Computo publication process
+Make a `git clone` of the repository you just templated and open it in your favorite IDE.
 
-## Conclusion
+:::{ layout-ncol="2"}
+
+### Python version
+
+Rename the `published-paper-tsne-python.qmd` to `published-paper-tsne.qmd`
+
+### R version
+
+Rename the `published-paper-tsne-R.qmd` to `published-paper-tsne.qmd`
+
+:::
+
+
+# Conclusion

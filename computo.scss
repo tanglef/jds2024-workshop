@@ -75,3 +75,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 70%;
 }
 
+.no-bullets ul {
+  list-style-type: none !important;
+}
+
+.people img {
+  border-radius: 50%;
+}
