@@ -1,0 +1,59 @@
+# make a straight horizontal arrow 
+# from ../gutenberg-press.png image
+# to ../img/minority-report_header.webp image
+# make a vertical arrow from "Computo" 
+# to the middle of the horizontal arrow
+direction: right
+grid-columns: 5
+
+classes: {
+    transparent: {
+      label: ""
+      style: {
+        fill: transparent
+      }
+    }
+    imageblock: {
+      label: ""
+      style: {
+        stroke: transparent
+      }
+    }
+    block: {
+      label: ""
+      style: {
+        fill: transparent
+        stroke: transparent
+      }
+    }
+  }
+
+press: {
+    shape: image
+    class: imageblock
+    icon: "../img/gutenberg-press.png"
+}
+
+
+Computo: {
+    shape: circle
+}
+
+block1.class: block
+block2.class: block
+
+minority: {
+    shape: image
+    class: imageblock
+    icon: "../img/minority-report_header.webp"
+    width: 400
+}
+
+press -- Computo -> minority: {
+    shape: arrow
+    style: {
+        stroke: black
+        stroke-width: 2
+    }
+}
+
