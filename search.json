@@ -1,101 +1,80 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Workshop on Reproducible Research",
+    "section": "",
+    "text": "9h-10h: Introduction to Computo and Quarto\n10h-10h30: Coffee break/Discussion\n10h30-11h30: Hands-on with a toy example\n11h30-12h30: Follow-up and optional personal article submission\n\n\n\n\nUnderstand the benefits of reproducible research\nLearn how to create a quarto document\nLearn how to include code, data, and narrative text in a quarto document\nLearn how to submit a quarto document to Computo\nHow to navigate the Computo submission process (optional)"
+  },
+  {
     "objectID": "index.html#learning-objectives",
     "href": "index.html#learning-objectives",
     "title": "Workshop on Reproducible Research",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\nUnderstand the benefits of reproducible research\nLearn how to create a quarto document\nLearn how to include code, data, and narrative text in a quarto document\nLearn how to submit a quarto document to Computo\nHow to navigate the Computo submission process (optional)"
+    "section": "",
+    "text": "Understand the benefits of reproducible research\nLearn how to create a quarto document\nLearn how to include code, data, and narrative text in a quarto document\nLearn how to submit a quarto document to Computo\nHow to navigate the Computo submission process (optional)"
   },
   {
     "objectID": "index.html#team",
     "href": "index.html#team",
     "title": "Workshop on Reproducible Research",
     "section": "Team",
-    "text": "Team\n\n\nEditorial board\n\n\n\nIT support\n\n\n\n\n\n\nJulien Chiquet (chief editor)\nStat. learning, DR INRAE Paris-Saclay University\n\n\n\n\nPierre Neuvial\nStatistique, DR CNRS IMT Toulouse\n\n\n\n\nMathurin Massias\nOptim./Machine-Learning CR INRIA Lyon\n\n\n\n\n\n\nFra.-Dav. Collin\nCS/Stats/ML, IR CNRS IMAG, Montpellier University\n\n\n\n\n\n\n\nNelle Varoquaux\nMachine learning, CR CNRS Grenoble Alpes University\n\n\n\n\nMarie-Pierre Étienne\nStatistics, MCF Institut Agro Rennes-Angers\n\n\n\n\nChloé Azencott\nMachine Learning  CR MinesParisTech\n\n\n\n\n\n\nGhislain Durif\nStats/ML/dev, IR CNRS LBMC, ENS LYON"
+    "text": "Team\n\n\nEditorial board\n\n\n\nIT support\n\n\n\n\n\n\n\nJulien Chiquet (chief editor)\nStat. learning, DR INRAE Paris-Saclay University\n\n\n\n\n\n\nPierre Neuvial\nStatistique, DR CNRS IMT Toulouse\n\n\n\n\n\n\nMathurin Massias\nOptim./Machine-Learning CR INRIA Lyon\n\n\n\n\n\n\n\n\nFra.-Dav. Collin\nCS/Stats/ML, IR CNRS IMAG, Montpellier University\n\n\n\n\n\n\n\n\n\nNelle Varoquaux\nMachine learning, CR CNRS Grenoble Alpes University\n\n\n\n\n\n\nMarie-Pierre Étienne\nStatistics, MCF Institut Agro Rennes-Angers\n\n\n\n\n\n\nChloé Azencott\nMachine Learning  CR MinesParisTech\n\n\n\n\n\n\n\n\nGhislain Durif\nStats/ML/dev, IR CNRS LBMC, ENS LYON"
   },
   {
     "objectID": "index.html#what-is-reproducible-research",
     "href": "index.html#what-is-reproducible-research",
     "title": "Workshop on Reproducible Research",
     "section": "What is reproducible research?",
-    "text": "What is reproducible research?\nFundamentally, it provides three things:\n\n\n\n\n  \n\n\n\nTools to reproduce the results (that’s like cooking)\n\n\n\n\n\n  \n\n\n\nA “recipe” to reproduce the results (still like cooking)\n\n\n\n\n\n\n\nA path to understand the results and the process that led to them (unlike cooking…1)\n\n\n\nEven so, we may discuss the fact that blindly following recipes will not make you a good cook."
+    "text": "What is reproducible research?\nFundamentally, it provides three things:\n\n\n\n\n\n\n\n\n\nTools to reproduce the results (that’s like cooking)\n\n\n\n\n\n\n\nA “recipe” to reproduce the results (still like cooking)\n\n\n\n\n\n\n\nA path to understand the results and the process that led to them (unlike cooking…1)"
   },
   {
     "objectID": "index.html#pre-computo-era",
     "href": "index.html#pre-computo-era",
     "title": "Workshop on Reproducible Research",
     "section": "Pre-Computo era",
-    "text": "Pre-Computo era\n\n\n\n\n\n\n\nThe pdf era and paper submission.\nThe reproducibility was not a priority:\n\nTools has to be bought, installed, and maintained\nData and code were not shared (social engineering\nEven methodology details are often missing\n\n\n\n\n\n\n\nSocial engineering required to get reproducible results: at best you just have to ask the authors, at worst you have to reverse-engineer everything… and have no guarantee whatsoever to get to the same results, when authors are in a “Après moi, le déluge” mood and ditch, forget or let it crumble once the paper is published."
-  },
-  {
-    "objectID": "index.html#pre-computo-era-2",
-    "href": "index.html#pre-computo-era-2",
-    "title": "Workshop on Reproducible Research",
-    "section": "Pre-Computo era (2)",
-    "text": "Pre-Computo era (2)\n\n\nAnd then in the Machine Learning domain, there was distill.pub [1]\n\n\nstate-of-the art visualizations\nparadigm shift in the scientific publication: “distillation” of complex ideas\n100% reproducible (just a git clone and a few standard commands)\n\n\n\n\nbut…"
-  },
-  {
-    "objectID": "index.html#pre-computo-era-3",
-    "href": "index.html#pre-computo-era-3",
-    "title": "Workshop on Reproducible Research",
-    "section": "Pre-Computo era (3)",
-    "text": "Pre-Computo era (3)\n\n\n\n\n\n\n \n\n\n\n… engineering was too complex for the average scientist (a lot of javascript, etc.)\n\n\nIn fact, the distill.pub project was discontinued in 2021 [2]\n\n\n\ndistill.pub\n\n\n\n\n\n\n\n\n\n\n\nDue to a serie of burnouts from the staff"
-  },
-  {
-    "objectID": "index.html#the-rise-of-the-pragmatic",
-    "href": "index.html#the-rise-of-the-pragmatic",
-    "title": "Workshop on Reproducible Research",
-    "section": "The Rise of the Pragmatic",
-    "text": "The Rise of the Pragmatic\ndistill.pub’s goals were right, but they outpaced themselves in terms of development complexity.\n\n\nComputo is a fresh start with a pragmatic approach\nleverage what the scientific community is already using (Rmarkdown, Jupyter notebooks, etc.)\n\n\n\n\\(\\Rightarrow\\) bring the community to the higher standards"
-  },
-  {
-    "objectID": "index.html#the-rise-of-the-pragmatic-1",
-    "href": "index.html#the-rise-of-the-pragmatic-1",
-    "title": "Workshop on Reproducible Research",
-    "section": "The Rise of the Pragmatic",
-    "text": "The Rise of the Pragmatic\ndistill.pub’s goals were right, but they outpaced themselves in terms of development complexity.\n\nComputo is a fresh start with a pragmatic approach\nleverage what the scientific community is already using (Rmarkdown, Jupyter notebooks, etc.)\n\n\nComputo"
+    "text": "Pre-Computo era\n\n\n\n\n\n\n\n\n\n\nThe pdf era and paper submission.\nThe reproducibility was not a priority:\n\nTools has to be bought, installed, and maintained\nData and code were not shared (social engineering\nEven methodology details are often missing\n\n\n\n\n\n\n\nSocial engineering required to get reproducible results: at best you just have to ask the authors, at worst you have to reverse-engineer everything… and have no guarantee whatsoever to get to the same results, when authors are in a “Après moi, le déluge” mood and ditch, forget or let it crumble once the paper is published.\n\n\n\n\n\n\n\nAnd then in the Machine Learning domain, there was distill.pub [1]\n\n\nstate-of-the art visualizations\nparadigm shift in the scientific publication: “distillation” of complex ideas\n100% reproducible (just a git clone and a few standard commands)\n\n\n\n\nbut…\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n… engineering was too complex for the average scientist (a lot of javascript, etc.)\n\n\nIn fact, the distill.pub project was discontinued in 2021 [2]\n\n\n\n\n\nDue to a serie of burnouts from the staff"
   },
   {
     "objectID": "index.html#the-rise-of-the-pragmatic-2",
     "href": "index.html#the-rise-of-the-pragmatic-2",
     "title": "Workshop on Reproducible Research",
     "section": "The Rise of the Pragmatic",
-    "text": "The Rise of the Pragmatic\ndistill.pub’s goals were right, but they outpaced themselves in terms of development complexity.\n\nComputo is a fresh start with a pragmatic approach\nleverage what the scientific community is already using (Rmarkdown, Jupyter notebooks, etc.)\n\n\nComputo"
+    "text": "The Rise of the Pragmatic\ndistill.pub’s goals were right, but they outpaced themselves in terms of development complexity.\n\nComputo is a fresh start with a pragmatic approach\nleverage what the scientific community is already using (Rmarkdown, Jupyter notebooks, etc.)"
   },
   {
     "objectID": "index.html#origin-of-computo-2020s",
     "href": "index.html#origin-of-computo-2020s",
     "title": "Workshop on Reproducible Research",
     "section": "Origin of Computo (~ 2020s)",
-    "text": "Origin of Computo (~ 2020s)\nFrench statistical society appoints a “publication” committee (lead by Julien then Pierre) to develop a new journal\n\n\n\n\n\n\n\n\n\n\nAssessment\n\n\n\n\n😔 Multiplication of “traditional” journals…\n\n😔 No valorization of “negative” results\n\n😥 No or not enough valorization of source codes and case studies\n\n😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) [3]\n\n😱 Issue with scientific reproducibility (analyses, experiments) [4–9]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPoint of view\n\n\n\nNeed for renewal regarding scientific research implementation\nNeed for higher standard regarding result publications\n\n\n\n\n\n\n\n\n\n⇝ Emergence of “Computo” idea"
+    "text": "Origin of Computo (~ 2020s)\nFrench statistical society appoints a “publication” committee (lead by Julien then Pierre) to develop a new journal\n\n\n\n\n\n\n\n\n\n\n\n\nAssessment\n\n\n\n\n\n😔 Multiplication of “traditional” journals…\n\n😔 No valorization of “negative” results\n\n😥 No or not enough valorization of source codes and case studies\n\n😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) [3]\n\n😱 Issue with scientific reproducibility (analyses, experiments) [4–9]\n\n\n\n\n\n\n\n\n\n\n\n\n\nPoint of view\n\n\n\n\nNeed for renewal regarding scientific research implementation\nNeed for higher standard regarding result publications\n\n\n\n\n\n\n\n⇝ Emergence of “Computo” idea"
   },
   {
     "objectID": "index.html#philosophy",
     "href": "index.html#philosophy",
     "title": "Workshop on Reproducible Research",
     "section": "Philosophy",
-    "text": "Philosophy\n\n\n\n\n\n\nScientific perimeter\n\n\nPromote contribution in statistics and machine learning that provide insight into which models or methods are more appropriate to address a specific scientific question\n\n\n\n\n\n\n\n\n\nOpen access\n\n\n\n\n\n“Diamond” open access (free to publish and free to read, possible to reuse)\n🅭 🅯 Content published under CC-BY license (attribution, share, adapt)\nReviews and discussions available after acceptance for publication (anonymous reviews)\n\n⇝ In accordance with Budapest Open Access Initiative (BOAI) and Plan S\n\n\n\n\n\n\n\n\n\n\n\n\n\nReproducible\n\n\n\nNumerical (statistical) reproducibility is a necessary condition\nSource code and data should be available, at least partly executed and fully executable"
+    "text": "Philosophy\n\n\n\n\n\n\nScientific perimeter\n\n\n\nPromote contribution in statistics and machine learning that provide insight into which models or methods are more appropriate to address a specific scientific question\n\n\n\n\n\n\n\n\nOpen access\n\n\n\n\n\n\n“Diamond” open access (free to publish and free to read, possible to reuse)\n🅭 🅯 Content published under CC-BY license (attribution, share, adapt)\nReviews and discussions available after acceptance for publication (anonymous reviews)\n\n⇝ In accordance with Budapest Open Access Initiative (BOAI) and Plan S\n\n\n\n\n\n\n\n\n\n\n\n\nReproducible\n\n\n\n\nNumerical (statistical) reproducibility is a necessary condition\nSource code and data should be available, at least partly executed and fully executable"
   },
   {
     "objectID": "index.html#note-on-reproducible-research-desquilbet2019-hejblum2020-the_turing_way2022",
     "href": "index.html#note-on-reproducible-research-desquilbet2019-hejblum2020-the_turing_way2022",
     "title": "Workshop on Reproducible Research",
     "section": "Note on reproducible research [10–12]",
-    "text": "Note on reproducible research [10–12]\nWhy reproducing scientific results?\n\nTo strengthen their credibility\nTo check for errors (everyone makes error at some point!!!)\nTo build new research upon them (science is incremental)\n\nIssues?\n\nReproduce numerical scientific results is often difficult (technology/environment evolution, source code/environment configuration/software partially available or not available)\nWaste of time and resources to reproduce existing non-reproducible results\n\nReproducible research?\n\nFor others but also for your future self\nImprove result credibility\nFacilitate future research works"
+    "text": "Note on reproducible research [10–12]\n\nWhy reproducing scientific results?\n\nTo strengthen their credibility\nTo check for errors (everyone makes error at some point!!!)\nTo build new research upon them (science is incremental)\n\n\n\nIssues?\n\nReproduce numerical scientific results is often difficult (technology/environment evolution, source code/environment configuration/software partially available or not available)\nWaste of time and resources to reproduce existing non-reproducible results\n\n\n\nReproducible research?\n\nFor others but also for your future self\nImprove result credibility\nFacilitate future research works"
   },
   {
     "objectID": "index.html#setup",
     "href": "index.html#setup",
     "title": "Workshop on Reproducible Research",
     "section": "Setup",
-    "text": "Setup\nOfficial launch at the end of 2021\n\n \n\n“Economical” model\n\nA few tenacious people…\nFree/Open-source community tools (Pandoc, Quarto, Git forge)\nInstitutional support (INRAE, INRIA, CNRS, SFdS)"
+    "text": "Setup\nOfficial launch at the end of 2021\n\n \n\n\n“Economical” model\n\nA few tenacious people…\nFree/Open-source community tools (Pandoc, Quarto, Git forge)\nInstitutional support (INRAE, INRIA, CNRS, SFdS)"
   },
   {
     "objectID": "index.html#functioning",
     "href": "index.html#functioning",
     "title": "Workshop on Reproducible Research",
     "section": "Functioning",
-    "text": "Functioning\n\n\nWriting system\nNotebook and literate programmingtext (markdown) + math (\\(\\LaTeX\\)) + code (Python/R/Julia), references (bib\\(\\TeX\\))\nPublication system\nEnvironment management, Compilation, Multi-format publication (pdf, html)Continuous integration/Continuous deployment (CI/CD)\nReviewing system\n\nAnonymous exchange published after acceptance\nReviewer pool (you can join)\n[Ongoing switch from Scholastica to Open review]\n\n\nSolutions/Prototype\nReproducible article and computations\n\nAutomatic editorial reproducibility\n\nScientific validation"
+    "text": "Functioning\n\n\n\nWriting system\nNotebook and literate programmingtext (markdown) + math (\\(\\LaTeX\\)) + code (Python/R/Julia), references (bib\\(\\TeX\\))\n\n\nPublication system\nEnvironment management, Compilation, Multi-format publication (pdf, html)Continuous integration/Continuous deployment (CI/CD)\n\n\nReviewing system\n\nAnonymous exchange published after acceptance\nReviewer pool (you can join)\n[Ongoing switch from Scholastica to Open review]\n\n\n\n\nSolutions/Prototype\nReproducible article and computations\n\nAutomatic editorial reproducibility\n\nScientific validation"
   },
   {
     "objectID": "index.html#note-on-literate-programming",
@@ -123,28 +102,28 @@
     "href": "index.html#tools-for-authors",
     "title": "Workshop on Reproducible Research",
     "section": "Tools for authors",
-    "text": "Tools for authors\n\n\nDocument model\nquarto Computo extension \n\nDocument template\nGit template repository\nwith template notebook document + doc + pre-configured compilation and publication setup\n\n\n\nLocally\n\n\n\nText editor/IDE (VS Code, Rstudio, NeoVim, etc.)\nQuarto (compilation)\n\n\n\nJulia / R / Python code + computations\ngit versioning system"
+    "text": "Tools for authors\n\n\n\nDocument model\nquarto Computo extension \n\n\n\nDocument template\nGit template repository\nwith template notebook document + doc + pre-configured compilation and publication setup\n\n\n\n\n\nLocally\n\n\n\nText editor/IDE (VS Code, Rstudio, NeoVim, etc.)\nQuarto (compilation)\n\n\n\nJulia / R / Python code + computations\ngit versioning system"
   },
   {
     "objectID": "index.html#author-point-of-view-13",
     "href": "index.html#author-point-of-view-13",
     "title": "Workshop on Reproducible Research",
     "section": "Author point of view (1/3)",
-    "text": "Author point of view (1/3)\n\nStep 0: setup a git repository for your article\n\n\nStartup from a template repository (R, Python, Julia)\n\n\n\n\n\n\nTip\n\n\nYou can host your git repository on github and soon an any gitlab forge1.\n\n\n\n\n\n\n\n\nStep 1: write your article\nLet’s go, locally (same spirit as Jupyter/Rmarkdown notebooks)\nwith CI/CD support"
+    "text": "Author point of view (1/3)\n\n\nStep 0: setup a git repository for your article\n\n\nStartup from a template repository (R, Python, Julia)\n\n\n\n\n\n\nTip\n\n\n\nYou can host your git repository on github and soon an any gitlab forge2.\n\n\n\n\n\n\n\n\n\nStep 1: write your article\nLet’s go, locally (same spirit as Jupyter/Rmarkdown notebooks)"
   },
   {
     "objectID": "index.html#author-point-of-view-23",
     "href": "index.html#author-point-of-view-23",
     "title": "Workshop on Reproducible Research",
     "section": "Author point of view (2/3)",
-    "text": "Author point of view (2/3)\nStep 2: configure the environment (dependencies management)\n\nExample in PythonExample in RExample in Julia\n\n\n\n\nvenv: use a virtual environment and generate the requirements.txt file\n\n# requirements.txt\njupyter\nmatplotlib\nnumpy\n\n\n\n\n\n\nrenv: generate the renv.lock file\n\nrenv::init()\nrenv::install(\"ggplot2\")\n# or equivalently install.packages(\"ggplot2\")\nrenv::snapshot()\n\n\n\n\n\n\nPkg: native Julia package manager (with generated Project.toml et Manifest.toml files)\n\nadd Plots\nadd IJulia\n\n\n\n\n\nConfiguration file versionned and used during CI compilation/publication action\nStep 3: (re)production\nA git push command will trigger your article compilation (including computations) and publication as a github page1\nSee the preconfigured .github/workflows/build.yml file for the github action configuration2\nor as a gitlab page when gitlab will be supported (soon)and soon the .gitlab-ci.yml file for the gitlab CI/CD configuration"
+    "text": "Author point of view (2/3)\n\nStep 2: configure the environment (dependencies management)\n\nExample in PythonExample in RExample in Julia\n\n\n\n\nvenv: use a virtual environment and generate the requirements.txt file\n\n# requirements.txt\njupyter\nmatplotlib\nnumpy\n\n\n\n\n\n\nrenv: generate the renv.lock file\n\nrenv::init()\nrenv::install(\"ggplot2\")\n# or equivalently install.packages(\"ggplot2\")\nrenv::snapshot()\n\n\n\n\n\n\nPkg: native Julia package manager (with generated Project.toml et Manifest.toml files)\n\nadd Plots\nadd IJulia\n\n\n\n\n\nConfiguration file versionned and used during CI compilation/publication action\n\n\nStep 3: (re)production\nA git push command will trigger your article compilation (including computations) and publication as a github page3\nSee the preconfigured .github/workflows/build.yml file for the github action configuration4"
   },
   {
     "objectID": "index.html#author-point-of-view-33",
     "href": "index.html#author-point-of-view-33",
     "title": "Workshop on Reproducible Research",
     "section": "Author point of view (3/3)",
-    "text": "Author point of view (3/3)\n\n\n\nStep 4: submit your article\nIf the CI process succeeds, both HTML and PDF versions are published on the github-page associated to the repository\n\nScholastica Open review\nhttps://openreview.net/group?id=Computo\nSubmit:\n\nyour article PDF (scientific content review)\nyour git repository (source code and reproducibility review)"
+    "text": "Author point of view (3/3)\n\n\n\n\nStep 4: submit your article\nIf the CI process succeeds, both HTML and PDF versions are published on the github-page associated to the repository\n\n\nScholastica Open review\nhttps://openreview.net/group?id=Computo\nSubmit:\n\nyour article PDF (scientific content review)\nyour git repository (source code and reproducibility review)"
   },
   {
     "objectID": "index.html#editor-point-of-view",
@@ -165,14 +144,14 @@
     "href": "index.html#discussion",
     "title": "Workshop on Reproducible Research",
     "section": "Discussion",
-    "text": "Discussion\nAbout several choices\n\nquarto: dynamic, agnostic language, FOSS1, community-based (pandoc), Rstudio/Posit support\ngithub: dynamic, large user community but not institutional and limited computing resources\n\nComparison/inspiration\n\nPeer Community-In (PCI)2, EpiSciences: different philosophy and/or functioning\nhttps://rescience.github.io/: “remake” published articles\nhttps://distill.pub (discontinued): technically more complicated and only ML/AI oriented\n\n“free and open-source”Computo is a PCI-friendly journal"
+    "text": "Discussion\n\nAbout several choices\n\nquarto: dynamic, agnostic language, FOSS5, community-based (pandoc), Rstudio/Posit support\ngithub: dynamic, large user community but not institutional and limited computing resources\n\n\n\nComparison/inspiration\n\nPeer Community-In (PCI)6, EpiSciences: different philosophy and/or functioning\nhttps://rescience.github.io/: “remake” published articles\nhttps://distill.pub (discontinued): technically more complicated and only ML/AI oriented"
   },
   {
     "objectID": "index.html#perspectives",
     "href": "index.html#perspectives",
     "title": "Workshop on Reproducible Research",
     "section": "Perspectives",
-    "text": "Perspectives\n\n\nProvision of computing resources (to be able to run all computations)\nFull gitlab support (CI/CD, docker, registry, etc.)\nSwitch to a french institutional gitlab forge?\nImprove long-term reproducibility stack (docker container, GUIX fully reproducible environment, only at the end of the publication process, )\n\n\nHow to help?\n\n\n\nBy submitting1 your work!\n\n\n\nBy becoming reviewer2\n\n\n\nhttps://computo.sfds.asso.fr/submit/contact us at computo@sfds.asso.fr"
+    "text": "Perspectives\n\n\nProvision of computing resources (to be able to run all computations)\nFull gitlab support (CI/CD, docker, registry, etc.)\nSwitch to a french institutional gitlab forge?\nImprove long-term reproducibility stack (docker container, GUIX fully reproducible environment, only at the end of the publication process, )\n\n\n\nHow to help?\n\n\n\nBy submitting7 your work!\n\n\n\nBy becoming reviewer8"
   },
   {
     "objectID": "index.html#regarding-the-logo",
@@ -207,21 +186,14 @@
     "href": "index.html#editorial",
     "title": "Workshop on Reproducible Research",
     "section": "Editorial",
-    "text": "Editorial\n\nEditorial\n\nnotebook rendering with the results of the external process\n\n\n\n\n\n\n\n\n\nRequirement\n\n\nIf the notebook contains everything to produce the final document\n\\(\\Rightarrow\\) “Direct reproducibility” in the sense that the notebook is the only thing needed to reproduce the results.\nUltimately, the workflow must end with a direct reproducibility step which concludes the whole process."
-  },
-  {
-    "objectID": "index.html#reproducibility-considerations-5",
-    "href": "index.html#reproducibility-considerations-5",
-    "title": "Workshop on Reproducible Research",
-    "section": "Reproducibility considerations (5)",
-    "text": "Reproducibility considerations (5)\n\nData transfer\n\nWhen applicable, the switch from external to editorial reproducibility is done with a “data transfer” step,\n\n\ndata produced by the external process \\(\\Rightarrow\\) transferred to the notebook environment.\n\n\n\n\n\n\n\nRequirement\n\n\nNot only the intermediate results are provided, but also the code to transfer it in the notebook environment.\nThey are a variety of software solutions to do so."
+    "text": "Editorial\n\nEditorial\n\nnotebook rendering with the results of the external process\n\n\n\n\n\n\n\n\nRequirement\n\n\n\nIf the notebook contains everything to produce the final document\n\\(\\Rightarrow\\) “Direct reproducibility” in the sense that the notebook is the only thing needed to reproduce the results.\nUltimately, the workflow must end with a direct reproducibility step which concludes the whole process.\n\n\n\nData transfer\n\nWhen applicable, the switch from external to editorial reproducibility is done with a “data transfer” step,\n\n\ndata produced by the external process \\(\\Rightarrow\\) transferred to the notebook environment.\n\n\n\n\n\n\nRequirement\n\n\n\nNot only the intermediate results are provided, but also the code to transfer it in the notebook environment.\nThey are a variety of software solutions to do so."
   },
   {
     "objectID": "index.html#examples-of-data-transfer-solutions",
     "href": "index.html#examples-of-data-transfer-solutions",
     "title": "Workshop on Reproducible Research",
     "section": "Examples of data transfer solutions",
-    "text": "Examples of data transfer solutions\nIntermediate results storage\n\nPython: joblib.Memory, caching mechanism for python functions, save the results of a function call to disk, and load it back later.\nR : .RData file format, can be loaded back in R with the load() function.\nIf results are small enough, storing in a text file (e.g. .csv, .tsv, .json, etc.) is also a solution.\n\nTransfer of the results to the notebook environment\n\n(.joblib directory or .Rdata file) could be committed to the git repository, and directly loaded in the notebook environment.\nAlternative, centralize input data (when large enough) and intermediate results on a shared scientific provider (we recommend Zenodo for this purpose), and download them in the notebook environment."
+    "text": "Examples of data transfer solutions\n\nIntermediate results storage\n\nPython: joblib.Memory, caching mechanism for python functions, save the results of a function call to disk, and load it back later.\nR : .RData file format, can be loaded back in R with the load() function.\nIf results are small enough, storing in a text file (e.g. .csv, .tsv, .json, etc.) is also a solution.\n\n\n\nTransfer of the results to the notebook environment\n\n(.joblib directory or .Rdata file) could be committed to the git repository, and directly loaded in the notebook environment.\nAlternative, centralize input data (when large enough) and intermediate results on a shared scientific provider (we recommend Zenodo for this purpose), and download them in the notebook environment."
   },
   {
     "objectID": "index.html#quarto",
@@ -263,6 +235,20 @@
     "href": "index.html#language-version",
     "title": "Workshop on Reproducible Research",
     "section": "Language version",
-    "text": "Language version\nMake a git clone of the repository you just templated and open it in your favorite IDE.\n\n\n\nPython version\nRename the published-paper-tsne-python.qmd to published-paper-tsne.qmd\n\n\nR version\nRename the published-paper-tsne-R.qmd to published-paper-tsne.qmd"
+    "text": "Language version\nMake a git clone of the repository you just templated and open it in your favorite IDE.\n\n\n\n\n\n\nPython version\nRename the published-paper-tsne-python.qmd to published-paper-tsne.qmd\n\n\nR version\nRename the published-paper-tsne-R.qmd to published-paper-tsne.qmd"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Workshop on Reproducible Research",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nEven so, we may discuss the fact that blindly following recipes will not make you a good cook.↩︎\nwith CI/CD support↩︎\nor as a gitlab page when gitlab will be supported (soon)↩︎\nand soon the .gitlab-ci.yml file for the gitlab CI/CD configuration↩︎\n“free and open-source”↩︎\nComputo is a PCI-friendly journal↩︎\nhttps://computo.sfds.asso.fr/submit/↩︎\ncontact us at computo@sfds.asso.fr↩︎"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is the site on “Workshop on reproducible research”, at the JdS 2024, Bordeaux."
   }
 ]
