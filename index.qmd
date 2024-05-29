@@ -147,54 +147,90 @@ The reproducibility was not a priority:
 
 ## Pre-Computo era (2)
 
-And then there was distill.pub @olah2017research, an inspiration because:
 
--   stunning visualizations, for the web and interactive
--   change the scientific publication paradigm, “distillation” of complex ideas
+![](img/minority-report_header.webp){width="600" fig-align="center" .fragment}
+
+:::{.fragment}
+
+And then there was distill.pub @olah2017research
+
+::::{.incremental}
+-   state-of-the art visualizations
+-   paradigm shift in the scientific publication: **“distillation” of complex ideas**
 -   100% reproducible (just a git clone and a few standard commands)
+::::
 
+:::
+
+:::{.fragment}
 but…
+:::
 
 ## Pre-Computo era (3)
 
-… engineering was too complex for the average scientist (a lot of javascript, etc.)
+::::{.r-stack}
+:::{ layout-ncol="2"}
 
+![](img/hard-work.webp)
+
+::::{}
+
+:::{.fragment}
+… **engineering was too complex** for the average scientist (a lot of javascript, etc.)
+:::
+
+:::{.fragment}
 In fact, the distill.pub project was discontinued in 2021 @team2021distill
+:::
 
-<!-- Rest in piece image -->
+::::
 
-## Pre-Computo era (2)
+:::
 
-distill.pub’s ideas are an ideal, but we need to start from what the scientific community is already using: Rmarkdown, Jupyter notebooks, etc.
+![](img/RIP.png){width="800" fig-align="center" .fragment }
 
-\leftarrow and to bring the community to these higher standards,
+::::
 
-## Origin (\~ 2020s)
+## Pre-Computo era (4) The Rise of the Pragmatic
+
+[distill.pub](https://distill.pub)’s goals were right, but they outpaced themselves in terms of development complexity.
+
+. . .
+
+**Computo** is a fresh start with a pragmatic approach: leverage
+what the scientific community is already using: Rmarkdown, Jupyter notebooks, etc.
+
+. . .
+
+$\Rightarrow$ bring the community to the higher standards
+
+## Origin of Computo (\~ 2020s)
 
 [French statistical society](https://www.sfds.asso.fr/) appoints a "publication" committee (lead by Julien then Pierre) to develop a new journal
 
-::: callout-note
+:::{.callout-note .fragment}
+
 ### Assessment
 
-😔 Multiplication of "traditional" journals...
-
-😔 No valorization of "negative" results
-
-😥 No or not enough valorization of source codes and case studies
-
-😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) [@hanson2023]
-
-😱 Issue with *scientific* reproducibility (analyses, experiments) [@ioannidis2005; @steen2011; @allison2016; @bastian2016; @whitfield2021; @hernandez2023]
+:::{.incremental .no-bullets}
+- 😔 Multiplication of "traditional" journals...  
+- 😔 No valorization of "negative" results  
+- 😥 No or not enough valorization of source codes and case studies  
+- 😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) [@hanson2023]  
+- 😱 Issue with *scientific* reproducibility (analyses, experiments) [@ioannidis2005; @steen2011; @allison2016; @bastian2016; @whitfield2021; @hernandez2023]  
+:::
 :::
 
-::: callout-tip
+::: {.callout-tip .fragment}
 ### Point of view
 
 -   Need for renewal regarding scientific research implementation
 -   Need for higher standard regarding result publications
 :::
 
+:::{.fragment}
 ⇝ Emergence of "Computo" idea
+:::
 
 ## Philosophy
 
