@@ -142,7 +142,7 @@ A “recipe” to reproduce the results (still like cooking)
 ![](img/head-side-thinking.svg){ width="100" height="100" }
 
 :::{.fragment}
-A path to understand the results and the process that led to them (unlike cooking…^[Even so, we may discuss the fact that blindly following recipes will not make you a good cook.])
+A path to understanding the results and the process that led to them (unlike cooking…^[Even so, we may discuss the fact that blindly following recipes will not make you a good cook.])
 :::
 
 ::::
@@ -152,7 +152,7 @@ A path to understand the results and the process that led to them (unlike cookin
 :::::{.r-stack}
 ::: {layout-ncol=2 .fragment }
 
-::::{} 
+::::{}
 ![](img/gutenberg-press.png)
 ::::
 
@@ -161,7 +161,7 @@ The pdf era and paper submission.
 
 The reproducibility was not a priority:
 
-- Tools has to be bought, installed, and maintained 
+- Tools has to be bought, installed, and maintained
 - Data and code were not shared (social engineering
 - Even methodology details are often missing
 ::::
@@ -174,7 +174,7 @@ The reproducibility was not a priority:
 :::::
 
 ::: {.notes}
-Social engineering required to get reproducible results: at best you just have to ask the authors, at worst you have to reverse-engineer everything… and have no guarantee whatsoever to get to the same results, when authors are in a "Après moi, le déluge" mood and ditch, forget or let it crumble once the paper is published.
+Social engineering is required to get reproducible results: at best you just have to ask the authors, at worst you have to reverse-engineer everything… and have no guarantee whatsoever to get to the same results, when authors are in a "Après moi, le déluge" mood and ditch, forget or let it crumble once the paper is published.
 :::
 
 ## Pre-Computo era (2)
@@ -230,7 +230,7 @@ distill.pub
 :::
 
 ::: {.notes}
-Due to a serie of burnouts from the staff
+Due to a series of burnouts from the staff
 :::
 
 :::::{.content-hidden unless-format="revealjs"}
@@ -274,7 +274,7 @@ $\Rightarrow$ *bring the community* to the higher standards
 
 ## Origin of Computo (\~ 2020s)
 
-[French statistical society](https://www.sfds.asso.fr/) appoints a "publication" committee (lead by Julien then Pierre) to develop a new journal
+[French Statistical Society](https://www.sfds.asso.fr/) appoints a "publication" committee (led by Julien then Pierre) to develop a new journal
 
 ::::{layout-ncol="2"}
 
@@ -283,11 +283,11 @@ $\Rightarrow$ *bring the community* to the higher standards
 ### Assessment
 
 :::{.incremental .no-bullets}
-- 😔 Multiplication of "traditional" journals...  
-- 😔 No valorization of "negative" results  
-- 😥 No or not enough valorization of source codes and case studies  
-- 😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) [@hanson2023]  
-- 😱 Issue with *scientific* reproducibility (analyses, experiments) [@ioannidis2005; @steen2011; @allison2016; @bastian2016; @whitfield2021; @hernandez2023]  
+- 😔 Multiplication of "traditional" journals...
+- 😔 No valorization of "negative" results
+- 😥 No or not enough valorization of source codes and case studies
+- 😱 ↘ of publication quality and time dedicated to each article (on author or reviewer sides) [@hanson2023]
+- 😱 Issue with *scientific* reproducibility (analyses, experiments) [@ioannidis2005; @steen2011; @allison2016; @bastian2016; @whitfield2021; @hernandez2023]
 :::
 :::
 
@@ -295,7 +295,7 @@ $\Rightarrow$ *bring the community* to the higher standards
 ### Point of view
 
 -   Need for renewal regarding scientific research implementation
--   Need for higher standard regarding result publications
+-   Need for higher standards regarding result publications
 :::
 ::::
 
@@ -338,10 +338,10 @@ Promote contribution in **statistics** and **machine learning** that provide ins
 
 ## Note on reproducible research [@desquilbet2019; @hejblum2020; @the_turing_way2022]
 
-#### Why reproducing scientific results?
+#### Why reproduce scientific results?
 
 -   To strengthen their credibility
--   To check for errors (everyone makes error at some point!!!)
+-   To check for errors (everyone makes errors at some point!!!)
 -   To build new research upon them (science is incremental)
 
 #### Issues?
@@ -389,7 +389,7 @@ Environment management, Compilation, Multi-format publication (pdf, html)<br><sm
 ::: {.column width="35%"}
 #### Solutions/Prototype
 
-Reproducible article and computations
+Reproducible articles and computations
 
 [![](img/quarto.png){height="40px"}](https://quarto.org)
 
@@ -414,17 +414,17 @@ Scientific validation
 
 <br>
 
-``` markdown
+````{markdown}
 ---
 title: "My article"
 ---
 
 We compute 1+1:
 
-\`\`\`{r}
+```{{r}}
 1+1
-\`\`\`
 ```
+````
 
 ## Note on quarto
 
@@ -656,7 +656,7 @@ including
 
 🤔 Institutional support?
 
-🤔 Changing of practices in the scientific community?
+🤔 Changing practices in the scientific community?
 
 <br/>
 
@@ -673,7 +673,7 @@ including
 
 -   [Peer Community-In (PCI)](https://peercommunityin.org/)[^5], [EpiSciences](https://www.episciences.org/): different philosophy and/or functioning
 -   <https://rescience.github.io/>: "remake" published articles
--   <https://distill.pub> (discontinued): technically more complicated and only ML/AI oriented
+-   <https://distill.pub> (discontinued): technically more complicated and only ML/AI-oriented
 
 [^5]: Computo is a [PCI-friendly journal](https://peercommunityin.org/pci-friendly-journals/)
 
@@ -723,7 +723,7 @@ including
 
 ## Two-fold reproducibility
 
-The global scientific workflow of a reproducible process for a Computo may be split in two types of steps:
+The global scientific workflow of a reproducible process for a Computo may be split into two types of steps:
 
 **External and Editorial**
 
@@ -751,20 +751,20 @@ If the notebook contains *everything* to produce the final document
 
 $\Rightarrow$ “Direct reproducibility” in the sense that the notebook is the only thing needed to reproduce the results.
 
-Ultimately, the workflow must end with a direct reproducibility step which concludes the whole process. 
+Ultimately, the workflow must end with a direct reproducibility step which concludes the whole process.
 :::
 
 ## Reproducibility considerations (5)
 
 Data transfer
-: When applicable, the switch from external to editorial reproducibility is done with a “data transfer” step, 
+: When applicable, the switch from external to editorial reproducibility is done with a “data transfer” step,
 
 data produced by the external process $\Rightarrow$ transferred to the notebook environment.
 
 :::{.callout-warning title="Requirement"}
-Not only the intermediate results are provided, but also **the code to transfer it in the notebook environment.** 
+Not only the intermediate results are provided, but also **the code to transfer it in the notebook environment.**
 
-They are a variety of software solutions to do so.
+There are a variety of software solutions to do so.
 :::
 
 ## Examples of data transfer solutions
@@ -772,22 +772,22 @@ They are a variety of software solutions to do so.
 ### Intermediate results storage
 - Python: [`joblib.Memory`](https://joblib.readthedocs.io/en/latest/memory.html), caching mechanism for python functions, save the results of a function call to disk, and load it back later.
 - R : `.RData` file format, can be loaded back in R with the `load()` function.
-- If results are small enough, storing in a text file (e.g. `.csv`, `.tsv`, `.json`, etc.) is also a solution.
+- If results are small enough, storing them in a text file (e.g. `.csv`, `.tsv`, `.json`, etc.) is also a solution.
 
 ### Transfer of the results to the notebook environment
 - (`.joblib` directory or `.Rdata` file) could be committed to the git repository, and directly loaded in the notebook environment.
 - Alternative, centralize input data (when large enough) and intermediate results on a shared scientific provider (we recommend [Zenodo](https://zenodo.org/) for this purpose), and download them in the notebook environment.
 
-# Workshop 
+# Workshop
 
 ## Quarto
 
-In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to make the CI (continuous integration) working.
+In this workshop, we will learn how to use quarto to create a document that includes code, data, and narrative text. We will also learn how to make the CI (continuous integration) work.
 
 ## The main pipeline, step by step
 
 -   Template installation
--   computing environment : renv, conda, etc.
+-   computing environment: renv, conda, etc.
 -   Authoring in the qmd
 -   rendering locally
 -   pushing to github
@@ -795,9 +795,9 @@ In this workshop, we will learn how to use quarto to create a document that incl
 
 ## Getting started
 
-To get started you will need to clone the mock template for this workshop. The template is available at 
+To get started you will need to clone the mock template for this workshop. The template is available at
 
-https://github.com/computorg/template-jds2024
+[https://github.com/computorg/template-jds2024](https://github.com/computorg/template-jds2024)
 
 :::{ .content-hidden unless-format="revealjs" }
 {{< qrcode https://github.com/computorg/template-jds2024 >}}
